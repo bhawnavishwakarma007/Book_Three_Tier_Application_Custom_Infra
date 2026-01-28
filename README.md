@@ -95,9 +95,13 @@ terraform apply -target=module.database
 ### Step 7: Apply Remaining Modules
 
 ``` bash
+terraform plan -target=module.frontend_launch_template
 terraform apply -target=module.frontend_launch_template
+terraform plan -target=module.backend_launch_template
 terraform apply -target=module.backend_launch_template
+terraform plan -target=module.backend_asg
 terraform apply -target=module.backend_asg
+terraform plan -target=module.frontend_asg
 terraform apply -target=module.frontend_asg
 ```
 
