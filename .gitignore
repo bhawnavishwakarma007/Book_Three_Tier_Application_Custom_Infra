@@ -1,0 +1,62 @@
+###################################
+# Terraform
+###################################
+
+**/.terraform/*
+.terraform/
+
+*.tfstate
+*.tfstate.*
+*.tfplan
+
+*.tfvars
+*.tfvars.json
+
+crash.log
+crash.*.log
+
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+.terraformrc
+terraform.rc
+
+###################################
+# Env-specific
+###################################
+
+env/**/.terraform/*
+env/**/terraform.tfstate*
+env/**/terraform.tfstate.d/
+
+###################################
+# Editor / OS
+###################################
+
+.vscode/
+.idea/
+*.swp
+*.bak
+.DS_Store
+Thumbs.db
+
+###################################
+# Logs / Docs
+###################################
+
+*.log
+*.doc
+*.docx
+*.pdf
+
+###################################
+# Node / Python
+###################################
+
+node_modules/
+__pycache__/
+*.pyc
+.env
+.env.*
