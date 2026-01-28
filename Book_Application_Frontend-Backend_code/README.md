@@ -1,233 +1,188 @@
-📚 Book Three-Tier Application on AWS (Custom Infrastructure)
+# Book Three-Tier Application on AWS (Custom Infrastructure)
 
-This repository demonstrates a production-style 3-Tier Web Application deployed on AWS Cloud using a custom-built infrastructure approach.
+This repository demonstrates a production-style three-tier web application
+(Frontend, Backend, and Database) deployed on AWS using a custom infrastructure
+approach.
 
-The project is designed for hands-on DevOps learning, real-world cloud architecture understanding, and end-to-end deployment practice.
+The project is intended for hands-on DevOps learning and real-world cloud
+architecture understanding.
 
-🧩 Application Architecture
+---
 
-The application follows a classic 3-Tier architecture:
+## Application Architecture
 
-Presentation Layer – React (Frontend)
+The application follows a classic three-tier architecture:
 
-Application Layer – Node.js + Express (Backend API)
+- Presentation Layer: React (Frontend)
+- Application Layer: Node.js + Express (Backend API)
+- Database Layer: MySQL (Amazon RDS)
 
-Database Layer – MySQL (Amazon RDS)
+---
 
-📐 High-Level Architecture Flow
-User
- |
-Frontend Load Balancer (Public)
- |
-React Frontend (Private EC2 + Nginx)
- |
-Backend Load Balancer (Public / Internal)
- |
-Node.js Backend (Private EC2)
- |
-Amazon RDS (MySQL - Private Subnets)
+## High-Level Architecture Flow
 
+User  
+|  
+Frontend Load Balancer (Public)  
+|  
+React Frontend (Private EC2 with Nginx)  
+|  
+Backend Load Balancer (Public or Internal)  
+|  
+Node.js Backend (Private EC2)  
+|  
+Amazon RDS (MySQL in Private Subnets)
 
-✔ Backend and database run inside private subnets
-✔ Load balancers handle traffic securely
-✔ Designed using AWS networking best practices
+---
 
-🛠️ Tech Stack
-Frontend
+## Tech Stack
 
-React
+### Frontend
+- React
+- Nginx
 
-Nginx
+### Backend
+- Node.js
+- Express
+- PM2
 
-Backend
+### Database
+- MySQL
+- Amazon RDS
 
-Node.js
+### Cloud & Networking
+- AWS EC2
+- Application Load Balancer
+- VPC with Public and Private Subnets
 
-Express
+---
 
-PM2 (Process Manager)
+## Repository Structure
 
-Database
+Book_Three_Tier_Application_Custom_Infra  
+├── Book_Application_Frontend-Backend_code  
+│   ├── backend  
+│   │   ├── index.js  
+│   │   ├── package.json  
+│   │   ├── package-lock.json  
+│   │   └── test.sql  
+│   └── client  
+│       ├── build  
+│       ├── public  
+│       ├── src  
+│       ├── entrypoint.sh  
+│       ├── proxy.conf  
+│       ├── package.json  
+│       └── package-lock.json  
 
-MySQL
+---
 
-Amazon RDS
+## Prerequisites
 
-Cloud & Networking
+- AWS Account
+- Amazon Linux EC2 instances
+- Node.js
+- Nginx
+- MySQL client
+- Basic AWS networking knowledge
 
-AWS EC2
+---
 
-Application Load Balancer (ALB)
+## Infrastructure Setup (High-Level)
 
-VPC (Public & Private Subnets)
+- Create a VPC with public and private subnets
+- Create MySQL RDS in private subnets
+- Launch Backend EC2 in a private subnet
+- Launch Frontend EC2 in a private subnet
+- Create Backend Load Balancer and Target Group
+- Create Frontend Load Balancer and Target Group
 
-📂 Repository Structure
-Book_Three_Tier_Application_Custom_Infra
-│
-├── Book_Application_Frontend-Backend_code
-│   │
-│   ├── backend
-│   │   ├── index.js
-│   │   ├── package.json
-│   │   ├── package-lock.json
-│   │   └── test.sql
-│   │
-│   └── client
-│       ├── build
-│       ├── public
-│       ├── src
-│       ├── entrypoint.sh
-│       ├── proxy.conf
-│       ├── package.json
-│       └── package-lock.json
+Note: If reverse proxy is not used, load balancers must be internet-facing.
 
-⚙️ Prerequisites
+---
 
-AWS Account
+## Database Setup (Backend Server)
 
-Amazon Linux EC2 instances
+Clone the repository:
 
-Node.js
+git clone https://github.com/bhawnavishwakarma007/Book_Three_Tier_Application_Custom_Infra.git  
+cd Book_Application_Frontend-Backend_code/backend  
 
-Nginx
+Create `.env` file:
 
-MySQL client
+DB_HOST=<your-rds-endpoint>  
+DB_USERNAME=admin  
+DB_PASSWORD=<your-password>  
+PORT=3306  
 
-Basic AWS networking knowledge
+Install MySQL client:
 
-🚀 Infrastructure Setup (High-Level)
+sudo yum install mariadb105-server -y  
 
-Create VPC with public & private subnets
+Import database:
 
-Create MySQL RDS in private subnets
+mysql -h <your-rds-endpoint> -u admin -p < test.sql  
 
-Launch Backend EC2 in private subnet
+---
 
-Launch Frontend EC2 in private subnet
+## Backend Deployment
 
-Create Backend Target Group & Load Balancer
+sudo dnf install -y nodejs  
+npm install  
+npm install dotenv  
+npm install -g pm2  
 
-Create Frontend Target Group & Load Balancer
+pm2 start index.js --name book-backend  
+pm2 startup  
+pm2 save  
 
-⚠️ If reverse proxy is not used, load balancers must be internet-facing
+Backend should be reachable via the Backend Load Balancer DNS.
 
-🗄️ Database Setup (Backend Server)
-Step 1: Clone Repository
-git clone https://github.com/bhawnavishwakarma007/Book_Three_Tier_Application_Custom_Infra.git
-cd Book_Application_Frontend-Backend_code/backend
+---
 
-Step 2: Create .env File
-vi .env
+## Frontend Deployment
 
-DB_HOST=<your-rds-endpoint>
-DB_USERNAME=admin
-DB_PASSWORD=<your-password>
-PORT=3306
+Clone the repository:
 
-Step 3: Install MySQL Client
-sudo yum install mariadb105-server -y
+git clone https://github.com/bhawnavishwakarma007/Book_Three_Tier_Application_Custom_Infra.git  
+cd Book_Application_Frontend-Backend_code/client  
 
-Step 4: Import Database
-mysql -h <your-rds-endpoint> -u admin -p < test.sql
-
-🔧 Backend Deployment
-sudo dnf install -y nodejs
-npm install
-npm install dotenv
-npm install -g pm2
-
-pm2 start index.js --name book-backend
-pm2 startup
-pm2 save
-
-
-✅ Backend should be reachable using Backend Load Balancer DNS
-
-🎨 Frontend Deployment
-Step 1: Clone Repository
-git clone https://github.com/bhawnavishwakarma007/Book_Three_Tier_Application_Custom_Infra.git
-cd Book_Application_Frontend-Backend_code/client
-
-Step 2: Update Backend API URL
-vi src/pages/config.js
+Update backend API URL:
 
 const API_BASE_URL = "http://<backend-load-balancer-dns>";
 
-Step 3: Install & Build Frontend
-sudo dnf install -y nodejs
-sudo yum install nginx -y
-sudo systemctl enable --now nginx
+Install and build frontend:
 
-npm install
-npm run build
-sudo cp -r build/* /usr/share/nginx/html
+sudo yum install nginx -y  
+sudo systemctl enable --now nginx  
 
+npm install  
+npm run build  
+sudo cp -r build/* /usr/share/nginx/html  
 
-🎉 Frontend is now accessible using Frontend Load Balancer DNS
+Frontend is accessible via the Frontend Load Balancer DNS.
 
-🔁 Reverse Proxy (Optional – Internal Backend LB)
+---
+
+## Reverse Proxy (Optional)
 
 If backend is behind an internal load balancer, configure Nginx reverse proxy.
 
-Update Frontend API Config
-const API_BASE_URL = "/api";
+---
 
-Create Nginx Reverse Proxy Config
-sudo vi /etc/nginx/conf.d/reverse-proxy.conf
+## Verification Checklist
 
-server {
-    listen 80;
+- Backend API reachable
+- Frontend UI loads
+- Data fetched from MySQL RDS
+- /api/books endpoint works
+- No CORS or networking issues
 
-    location /api/ {
-        proxy_pass http://<backend-internal-lb>/;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-    }
+---
 
-    root /usr/share/nginx/html;
-    index index.html;
+## Author
 
-    location / {
-        try_files $uri /index.html;
-    }
-}
+Bhawna Vishwakarma  
+DevOps & Cloud Engineering Student  
 
-Reload Nginx
-sudo nginx -t
-sudo systemctl reload nginx
-
-✅ Verification Checklist
-
-Backend API reachable
-
-Frontend UI loads
-
-Data fetched from MySQL RDS
-
-/api/books endpoint works
-
-No CORS or networking issues
-
-🎓 Learning Outcomes
-
-AWS 3-Tier Architecture
-
-Secure private networking
-
-Load Balancer integration
-
-React & Node.js deployment
-
-Reverse proxy using Nginx
-
-Real-world DevOps workflow
-
-🙌 Author
-
-Bhawna Vishwakarma
-DevOps & Cloud Engineering Student
-
-🔗 GitHub
-https://github.com/bhawnavishwakarma007
-
-⭐ If this project helped you, don’t forget to star the repository
+GitHub: https://github.com/bhawnavishwakarma007
