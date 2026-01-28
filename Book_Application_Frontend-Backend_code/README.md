@@ -133,7 +133,8 @@ npm install dotenv
 npm install -g pm2  
 
 pm2 start index.js --name book-backend  
-pm2 startup  
+pm2 startup
+sudo systemctl enable pm2-root
 pm2 save  
 ```
 Backend should be reachable via the Backend Load Balancer DNS.
@@ -149,11 +150,14 @@ cd Book_Application_Frontend-Backend_code/client
 ```
 Update backend API URL:
 ``` bash
+vi client/src/pages/config.js
 const API_BASE_URL = "http://<backend-load-balancer-dns>";
 ```
 Install and build frontend:
 ``` bash
-sudo yum install nginx -y  
+sudo dnf install -y nodejs
+sudo yum install nginx -y
+sudo systemctl start nginx
 sudo systemctl enable --now nginx  
 
 npm install  
@@ -166,6 +170,9 @@ Frontend is accessible via the Frontend Load Balancer DNS.
 
 ##  Reverse Proxy (Optional – Internal Load Balancer)
 **If backend is behind an internal load balancer, configure Nginx reverse proxy.**
+
+###Files
+- proxy.conf — Nginx server block (this file)
 
 Update config.js
 ```bash
