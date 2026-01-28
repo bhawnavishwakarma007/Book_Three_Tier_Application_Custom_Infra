@@ -97,36 +97,36 @@ Book_Three_Tier_Application_Custom_Infra
 - Create Backend Load Balancer and Target Group
 - Create Frontend Load Balancer and Target Group
 
-Note: If reverse proxy is not used, load balancers must be internet-facing.
+**Note:** If reverse proxy is not used, load balancers must be internet-facing.
 
 ---
 
 ## Database Setup (Backend Server)
 
-Clone the repository:
-
+### Clone the repository:
+``` bash
 git clone https://github.com/bhawnavishwakarma007/Book_Three_Tier_Application_Custom_Infra.git  
 cd Book_Application_Frontend-Backend_code/backend  
-
-Create `.env` file:
-
+```
+### Create `.env` file:
+``` bash
 DB_HOST=<your-rds-endpoint>  
 DB_USERNAME=admin  
 DB_PASSWORD=<your-password>  
 PORT=3306  
-
-Install MySQL client:
-
+```
+### Install MySQL client:
+``` bash
 sudo yum install mariadb105-server -y  
-
-Import database:
-
+```
+### Import database:
+``` bash
 mysql -h <your-rds-endpoint> -u admin -p < test.sql  
-
+```
 ---
 
 ## Backend Deployment
-
+``` bash
 sudo dnf install -y nodejs  
 npm install  
 npm install dotenv  
@@ -135,7 +135,7 @@ npm install -g pm2
 pm2 start index.js --name book-backend  
 pm2 startup  
 pm2 save  
-
+```
 Backend should be reachable via the Backend Load Balancer DNS.
 
 ---
@@ -143,23 +143,23 @@ Backend should be reachable via the Backend Load Balancer DNS.
 ## Frontend Deployment
 
 Clone the repository:
-
+``` bash
 git clone https://github.com/bhawnavishwakarma007/Book_Three_Tier_Application_Custom_Infra.git  
 cd Book_Application_Frontend-Backend_code/client  
-
+```
 Update backend API URL:
-
+``` bash
 const API_BASE_URL = "http://<backend-load-balancer-dns>";
-
+```
 Install and build frontend:
-
+``` bash
 sudo yum install nginx -y  
 sudo systemctl enable --now nginx  
 
 npm install  
 npm run build  
 sudo cp -r build/* /usr/share/nginx/html  
-
+```
 Frontend is accessible via the Frontend Load Balancer DNS.
 
 ---
