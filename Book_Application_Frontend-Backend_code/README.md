@@ -1,206 +1,233 @@
-   #  Book Application - 3 tier Application
+📚 Book Three-Tier Application on AWS (Custom Infrastructure)
 
-✨This repository is created to learn and deploy  3-tier application on aws cloud. this project contain three layer Presentation, Application and database
+This repository demonstrates a production-style 3-Tier Web Application deployed on AWS Cloud using a custom-built infrastructure approach.
 
-## 🏠 Architecture
-![Architecture of the application](architecture.gif)
+The project is designed for hands-on DevOps learning, real-world cloud architecture understanding, and end-to-end deployment practice.
 
-## Tech stack
+🧩 Application Architecture
 
-- React 
-- Nodejs
-- MySQL
+The application follows a classic 3-Tier architecture:
+
+Presentation Layer – React (Frontend)
+
+Application Layer – Node.js + Express (Backend API)
+
+Database Layer – MySQL (Amazon RDS)
+
+📐 High-Level Architecture Flow
+User
+ |
+Frontend Load Balancer (Public)
+ |
+React Frontend (Private EC2 + Nginx)
+ |
+Backend Load Balancer (Public / Internal)
+ |
+Node.js Backend (Private EC2)
+ |
+Amazon RDS (MySQL - Private Subnets)
 
 
-**Note**: You should have nodejs installed on your system. [Node.js](https://nodejs.org/)
+✔ Backend and database run inside private subnets
+✔ Load balancers handle traffic securely
+✔ Designed using AWS networking best practices
 
-👉 let install dependency to run react application
+🛠️ Tech Stack
+Frontend
 
+React
 
-```
-1.Create rds database into private subnets
-2.Create two private  servers in private subnets one is for frontend and another one is for backend
-3.Create two TG and loadbalncers one is for frontend another one is for backend 
-4.Create both loadblancers in public subnets only and loadbalancer type s internet facing only becuser internal loadbalncer not working for our project 
-```
-### ->>connect to backend server--
-```
- git clone https://github.com/CloudTechDevOps/2nd10WeeksofCloudOps-main.git
-   cd backend
-```
- ### edit the .env file in bellow path if u dont have any .env file just create in below path
-```
-2nd10WeeksofCloudOps-main.git/backend/.env
+Nginx
 
-### add this mater
-DB_HOST=book.rds.com	#change rds endpoint
-DB_USERNAME=admin	#cahnge to nyour rds user name 
-DB_PASSWORD="veera"   # change to your rds password
+Backend
+
+Node.js
+
+Express
+
+PM2 (Process Manager)
+
+Database
+
+MySQL
+
+Amazon RDS
+
+Cloud & Networking
+
+AWS EC2
+
+Application Load Balancer (ALB)
+
+VPC (Public & Private Subnets)
+
+📂 Repository Structure
+Book_Three_Tier_Application_Custom_Infra
+│
+├── Book_Application_Frontend-Backend_code
+│   │
+│   ├── backend
+│   │   ├── index.js
+│   │   ├── package.json
+│   │   ├── package-lock.json
+│   │   └── test.sql
+│   │
+│   └── client
+│       ├── build
+│       ├── public
+│       ├── src
+│       ├── entrypoint.sh
+│       ├── proxy.conf
+│       ├── package.json
+│       └── package-lock.json
+
+⚙️ Prerequisites
+
+AWS Account
+
+Amazon Linux EC2 instances
+
+Node.js
+
+Nginx
+
+MySQL client
+
+Basic AWS networking knowledge
+
+🚀 Infrastructure Setup (High-Level)
+
+Create VPC with public & private subnets
+
+Create MySQL RDS in private subnets
+
+Launch Backend EC2 in private subnet
+
+Launch Frontend EC2 in private subnet
+
+Create Backend Target Group & Load Balancer
+
+Create Frontend Target Group & Load Balancer
+
+⚠️ If reverse proxy is not used, load balancers must be internet-facing
+
+🗄️ Database Setup (Backend Server)
+Step 1: Clone Repository
+git clone https://github.com/bhawnavishwakarma007/Book_Three_Tier_Application_Custom_Infra.git
+cd Book_Application_Frontend-Backend_code/backend
+
+Step 2: Create .env File
+vi .env
+
+DB_HOST=<your-rds-endpoint>
+DB_USERNAME=admin
+DB_PASSWORD=<your-password>
 PORT=3306
-```
-```
-yum install mariadb105-server
-```
-#### SSH into backend server and then run test.sql script from backend to create tables and records 
-```
-mysql -h book.rds.com -u admin -p<password> < test.sql
-```
 
-### Backend deploy process ###
-```
+Step 3: Install MySQL Client
+sudo yum install mariadb105-server -y
+
+Step 4: Import Database
+mysql -h <your-rds-endpoint> -u admin -p < test.sql
+
+🔧 Backend Deployment
 sudo dnf install -y nodejs
-
-cd backend
-
 npm install
-
 npm install dotenv
-
 npm install -g pm2
 
-pm2 start index.js --name node-app
-
+pm2 start index.js --name book-backend
 pm2 startup
-
-sudo systemctl enable pm2-root
-
 pm2 save
-```
-#### after that create backend tg and loadbalncer and check your loadbalncer is giving hello response or not 
 
 
-# ---------------------------------- FrontEnd---------------------------------------
+✅ Backend should be reachable using Backend Load Balancer DNS
 
- ### Frontend deploy process ###
-```
-git clone https://github.com/CloudTechDevOps/2nd10WeeksofCloudOps-main.git
-cd client 
-```
-##### edit the config.js
-```
-vi client/src/pages/config.js
-  
-const API_BASE_URL = "http://api.narni.co.in";
- ````
-in above line change to your backend loadbalncer url
-const API_BASE_URL = "http://backend-loadbalancer-url";
-```
+🎨 Frontend Deployment
+Step 1: Clone Repository
+git clone https://github.com/bhawnavishwakarma007/Book_Three_Tier_Application_Custom_Infra.git
+cd Book_Application_Frontend-Backend_code/client
+
+Step 2: Update Backend API URL
+vi src/pages/config.js
+
+const API_BASE_URL = "http://<backend-load-balancer-dns>";
+
+Step 3: Install & Build Frontend
 sudo dnf install -y nodejs
-sudo yum install nginx
-sudo systemctl start nginx
-sudo systemctl enable nginx
-```
-### then go to client directory 
-### run below commands
+sudo yum install nginx -y
+sudo systemctl enable --now nginx
 
-### ****(Use npm run build:
-### When preparing the app for deployment (e.g., to a server or hosting service like AWS, Netlify, or Vercel).
-### Use npm start:
-### During development or to start the app in production (for backend apps).)*****
-```
-npm install 
+npm install
 npm run build
 sudo cp -r build/* /usr/share/nginx/html
-```
-# your frontend part is completed 
-
-### #### after that create frontend tg and loadbalncer and check your loadbalncer is giving project output along with books 
-# add the books 
-
-# revrse proxy
-
-### if you want to use internnal loadbalncer please go through below procress
-# Reverse Proxy & Backend Setup (Amazon Linux)
-
-This repository contains an Nginx reverse-proxy configuration that serves a React frontend and proxies API requests to a backend at private IP or loadbalancer.
-
-.
-
-## Files
-- proxy.conf — Nginx server block (this file)
-
-## Behavior summary (from `proxy.conf`)
-- Listens on port 80.
-- Routes requests starting with `/api/` to private ip or loadbalncer`.
-  - Example: `GET /api/books` -> proxied to privateip or loadbalncer
-- Serves a React single-page app from `/usr/share/nginx/html` and falls back to `index.html` for client routes.
 
 
-## Install Nginx on Amazon Linux 2
-Run the following on the public-facing EC2 (nginx) instance.
+🎉 Frontend is now accessible using Frontend Load Balancer DNS
 
-### After cloneing your your config.js file url must be /api only
-once chek in your config file below one is comented or uncomented if commented please uncoment and build the package
-```
-const API_BASE_URL = "/api";  // For reverse proxy it is mandatory so dont change
+🔁 Reverse Proxy (Optional – Internal Backend LB)
 
-```
-```bash
-sudo yum update -y
-sudo yum install -y nginx
-# Enable and start nginx
-sudo systemctl enable --now nginx
-```
-### create a proxy file and paste the file from git and chage the backend private ip if you are using internal loadbalncer change it 
-```bash
+If backend is behind an internal load balancer, configure Nginx reverse proxy.
+
+Update Frontend API Config
+const API_BASE_URL = "/api";
+
+Create Nginx Reverse Proxy Config
 sudo vi /etc/nginx/conf.d/reverse-proxy.conf
-```
-### paste below file and change loadbalancer url
-```
+
 server {
     listen 80;
-    server_name _;
 
-    # 🔥  API reverse proxy (WITH PATH FIX)
-    location ^~ /api/ {
-        proxy_pass http://backend-loadbalncer-url/;
-        proxy_http_version 1.1;
-
+    location /api/ {
+        proxy_pass http://<backend-internal-lb>/;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
     }
 
-    # React build
     root /usr/share/nginx/html;
     index index.html;
 
     location / {
-        try_files $uri $uri/ /index.html;
+        try_files $uri /index.html;
     }
 }
-```
-# Verify
-2. Test and reload nginx:
 
-```bash
+Reload Nginx
 sudo nginx -t
 sudo systemctl reload nginx
-```
 
-## Deploy React build to Nginx
-On the machine where you build the React app (or directly on the nginx server):
+✅ Verification Checklist
 
-```bash
-# build (on your dev machine or CI)
-npm install
-npm run build
+Backend API reachable
 
-# Copy the build files to nginx root on the nginx host
-sudo rm -rf /usr/share/nginx/html/*
-sudo cp -r build/* /usr/share/nginx/html/
+Frontend UI loads
 
-# reload nginx
-sudo systemctl reload nginx
-```
+Data fetched from MySQL RDS
 
-If your React app expects the app to be served at `/` this config will work as-is because the `location /` block uses `try_files` to return `index.html` for client routes.
+/api/books endpoint works
 
-## Sample Backend Setup (Amazon Linux) — Node.js / Express
-These instructions create a minimal API that listens on port 80 and matches the `proxy_pass` target.
+No CORS or networking issues
 
+🎓 Learning Outcomes
 
+AWS 3-Tier Architecture
 
+Secure private networking
 
-**Thank you so much for reading..😅**
+Load Balancer integration
+
+React & Node.js deployment
+
+Reverse proxy using Nginx
+
+Real-world DevOps workflow
+
+🙌 Author
+
+Bhawna Vishwakarma
+DevOps & Cloud Engineering Student
+
+🔗 GitHub
+https://github.com/bhawnavishwakarma007
+
+⭐ If this project helped you, don’t forget to star the repository
