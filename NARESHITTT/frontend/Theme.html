@@ -28,7 +28,7 @@
     ::-webkit-scrollbar-track{background:transparent;}
     ::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px;}
 
-    /* ── NAV ── */
+    
     .nav{position:sticky;top:0;z-index:400;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 60px;background:rgba(246,243,237,.96);backdrop-filter:blur(24px);box-shadow:0 1px 0 var(--divider);}
     .nav-logo img{height:38px;}
     .nav-links{display:flex;gap:36px;list-style:none;align-items:center;}
@@ -38,7 +38,6 @@
     .nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1);}
     .nav-end{display:flex;gap:10px;align-items:center;}
 
-    /* ── NAV USER PROFILE ── */
     .nav-user{display:none;align-items:center;gap:10px;}
     .nav-user.show{display:flex;}
     .nav-user-avatar{
@@ -65,7 +64,6 @@
     .btn-nf{padding:9px 22px;background:var(--gold);border:1.5px solid var(--gold);border-radius:var(--r-pill);font-family:var(--font-sans);font-size:11px;font-weight:700;color:var(--white);cursor:pointer;transition:all .35s var(--ease-silk);letter-spacing:.5px;}
     .btn-nf:hover{background:var(--ink);border-color:var(--ink);}
 
-    /* ── HERO ── */
     .hero{
       background:var(--ink);
       padding:100px 60px 90px;
@@ -101,11 +99,9 @@
     .hero h1 strong{font-weight:700;}
     .hero-sub{font-size:16px;color:rgba(246,243,237,.42);max-width:560px;line-height:1.9;}
 
-    /* ── MAIN TWO-COLUMN LAYOUT ── */
     .page-wrap{max-width:1280px;margin:0 auto;padding:72px 60px 100px;}
     .two-col{display:grid;grid-template-columns:1fr 380px;gap:72px;align-items:start;}
 
-    /* ── LEFT: THEME CONTENT ── */
     .theme-lead-block{
       padding:32px 36px;background:var(--white);
       border:1px solid var(--divider);border-radius:var(--r-lg);
@@ -163,7 +159,6 @@
     .theme-closing-attr{font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(246,243,237,.3);position:relative;z-index:1;}
     .theme-closing-bar{width:32px;height:2px;background:var(--gold);margin-bottom:18px;position:relative;z-index:1;}
 
-    /* ── RIGHT: STICKY ENQUIRY FORM ── */
     .sidebar{position:sticky;top:88px;}
     .enq-card{
       background:var(--white);border:1px solid var(--divider);
@@ -243,7 +238,6 @@
     .es-again{padding:9px 22px;background:transparent;border:1.5px solid var(--divider);border-radius:var(--r-pill);font-family:var(--font-sans);font-size:12px;font-weight:600;color:var(--ash);cursor:pointer;transition:all .3s;}
     .es-again:hover{border-color:var(--ink);color:var(--ink);}
 
-    /* ── FOOTER ── */
     .site-footer{background:var(--ink);padding:60px 60px 36px;}
     .fgrid{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:52px;max-width:1280px;margin:0 auto 48px;}
     .flogo img{height:34px;filter:brightness(0) invert(1);opacity:.8;margin-bottom:16px;}
@@ -263,11 +257,9 @@
     .fbtn-wa{background:#25D366;color:#fff;}
     .fbtn-ph{background:var(--gold);color:#fff;}
 
-    /* Scroll reveal */
     .rv{opacity:0;transform:translateY(22px);transition:opacity .65s var(--ease-silk),transform .65s var(--ease-silk);}
     .rv.in{opacity:1;transform:translateY(0);}
 
-    /* Responsive */
     @media(max-width:1024px){
       .nav{padding:0 28px;}.nav-links{display:none;}
       .hero{padding:56px 28px 56px;}
@@ -285,7 +277,6 @@
 </head>
 <body>
 
-<!-- NAV -->
 <nav class="nav">
   <a href="index.html" class="nav-logo"><img src="https://cdn.nareshit.com/images/naresh-it-logo2.png" alt="NareshIT"></a>
   <ul class="nav-links">
@@ -296,7 +287,6 @@
     <li><a href="contact.html">Contact</a></li>
   </ul>
   <div class="nav-end">
-    <!-- Logged-in profile pill -->
     <div class="nav-user" id="nav-user">
       <div class="nav-user-avatar" id="nav-user-avatar">?</div>
       <div class="nav-user-info">
@@ -305,13 +295,11 @@
       </div>
       <button class="nav-signout" id="nav-signout">Sign out</button>
     </div>
-    <!-- Logged-out buttons -->
     <button class="btn-ng" id="nav-login-btn" onclick="window.location.href='index.html'">Login</button>
     <button class="btn-nf" id="enroll-btn">Enroll Now</button>
   </div>
 </nav>
 
-<!-- HERO -->
 <div class="hero">
   <div class="hero-glyph">"</div>
   <div class="hero-inner">
@@ -325,13 +313,11 @@
   </div>
 </div>
 
-<!-- MAIN -->
 <div class="page-wrap">
   <div class="two-col">
 
-    <!-- LEFT: Theme Content -->
+  
     <div>
-      <!-- Lead statement -->
       <div class="theme-lead-block rv">
         <div class="theme-lead-tag">Our Core Belief</div>
         <div class="theme-lead-text">
@@ -339,7 +325,6 @@
         </div>
       </div>
 
-      <!-- Values -->
       <div class="theme-values">
 
         <div class="tv rv" style="transition-delay:.04s">
@@ -397,8 +382,6 @@
         </div>
 
       </div>
-
-      <!-- Closing statement -->
       <div class="theme-closing rv">
         <div class="theme-closing-bar"></div>
         <div class="theme-closing-quote">
@@ -408,7 +391,6 @@
       </div>
     </div>
 
-    <!-- RIGHT: Enquiry Form -->
     <div class="sidebar" id="enq-form">
       <div class="enq-card">
 
@@ -589,7 +571,6 @@
           </div>
         </form>
 
-        <!-- Success state -->
         <div class="enq-success" id="enq-success">
           <div class="es-icon">✓</div>
           <div class="es-title">Enquiry Submitted!</div>
@@ -608,7 +589,6 @@
   </div>
 </div>
 
-<!-- FOOTER -->
 <footer class="site-footer">
   <div class="fgrid">
     <div>
@@ -651,12 +631,8 @@
   <button class="fbtn fbtn-ph" onclick="window.location.href='tel:+918179191999'">📞</button>
 </div>
 
-<!-- ─────────────────────────────────────────────────────────────────
-     SCRIPTS  —  type="module" required for ES import statements
-───────────────────────────────────────────────────────────────── -->
 <script type="module">
 
-/* ── Firebase ── */
 import { initializeApp }
   from 'https://www.gstatic.com/firebasejs/12.11.0/firebase-app.js';
 import { getAuth, onAuthStateChanged, signOut }
@@ -703,7 +679,6 @@ function hideNavProfile() {
   try { localStorage.removeItem(LS_KEY); } catch(_) {}
 }
 
-/* Instant render from localStorage — no flicker on page load */
 (function() {
   try {
     const cached = localStorage.getItem(LS_KEY);
@@ -714,12 +689,10 @@ function hideNavProfile() {
   } catch(_) {}
 })();
 
-/* Sign-out */
 document.getElementById('nav-signout').addEventListener('click', () => {
   signOut(auth).then(hideNavProfile).catch(console.error);
 });
 
-/* Firebase auth — authoritative source of truth */
 onAuthStateChanged(auth, user => {
   if (user) {
     showNavProfile(
@@ -731,12 +704,10 @@ onAuthStateChanged(auth, user => {
   }
 });
 
-/* ── ENROLL NOW button → scroll to form ── */
 document.getElementById('enroll-btn').addEventListener('click', () => {
   document.getElementById('enq-form').scrollIntoView({ behavior: 'smooth' });
 });
 
-/* ── MODE TOGGLE ── */
 let selMode = 'Online';
 document.querySelectorAll('.md-btn').forEach(btn => {
   btn.addEventListener('click', () => {
@@ -746,7 +717,6 @@ document.querySelectorAll('.md-btn').forEach(btn => {
   });
 });
 
-/* ── FORM SUBMIT ── */
 document.getElementById('enquiry-form').addEventListener('submit', async function(e) {
   e.preventDefault();
   let valid = true;
@@ -780,7 +750,6 @@ document.getElementById('enquiry-form').addEventListener('submit', async functio
   txt.textContent = 'Submit Enquiry →';
 });
 
-/* Clear errors on input */
 ['enq-name', 'enq-email', 'enq-mobile', 'enq-course'].forEach(id => {
   const el = document.getElementById(id);
   if (!el) return;
@@ -791,7 +760,6 @@ document.getElementById('enquiry-form').addEventListener('submit', async functio
   });
 });
 
-/* Reset form */
 function resetForm() {
   document.getElementById('enquiry-form').reset();
   document.getElementById('enquiry-form').style.display = 'block';
@@ -801,7 +769,6 @@ function resetForm() {
 }
 document.getElementById('es-again-btn').addEventListener('click', resetForm);
 
-/* ── SCROLL REVEAL ── */
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }

@@ -1823,16 +1823,12 @@
   <script type="module">
   'use strict';
 
-  /* ============================================================
-     ★ BACKEND CONFIG
-     Flask OTP server runs on port 5000
-  ============================================================ */
-  const OTP_BASE    = 'http://localhost:5000/';   // Flask mail server
-  const BACKEND_URL = 'http://localhost:5000';   // Chat/AI server (update if separate)
+ 
+  const OTP_BASE    = 'http://54.82.211.252:5000/';   
+  const BACKEND_URL = 'http://localhost:5000';   
   const CHAT_ENDPOINT = `${BACKEND_URL}/chat`;
 
 
-  /* ── INTRO SKIP LOGIC ── */
   const INTRO_KEY = 'nit_intro_seen';
   const introAlreadySeen = !!sessionStorage.getItem(INTRO_KEY);
 
@@ -1843,7 +1839,6 @@
     sessionStorage.setItem(INTRO_KEY, '1');
   }
 
-  /* ── LOGO CACHE ── */
   (function cacheLogos() {
     const LOGO_URL = 'https://cdn.nareshit.com/images/naresh-it-logo2.png';
     const CACHE_KEY = 'nit_logo_v1';
@@ -1859,7 +1854,6 @@
     }
   })();
 
-  /* ── FIREBASE ── */
   import { initializeApp }
     from 'https://www.gstatic.com/firebasejs/12.11.0/firebase-app.js';
   import { getAnalytics }
@@ -1891,7 +1885,6 @@
   const auth      = getAuth(app);
   const gProvider = new GoogleAuthProvider();
 
-  /* ── NAV PROFILE ── */
   const LS_KEY = 'nit_user';
 
   function getInitials(name) {
@@ -2168,7 +2161,6 @@
   });
 
 
-  /* ── AI COURSE ADVISOR ── */
   (function initAdvisor() {
     const messagesEl = document.getElementById('ai-messages');
     const inputEl    = document.getElementById('ai-input');
@@ -2234,7 +2226,6 @@ Be warm, concise and helpful (2–4 sentences max). Ask one clarifying question 
   })();
 
 
-  /* ── CONTACT FORM ── */
   document.getElementById('btn-contact-submit').addEventListener('click', function () {
     if (!window.__nitLoggedIn) { window.openAuthModal('login'); return; }
     const orig = this.textContent;
@@ -2244,7 +2235,6 @@ Be warm, concise and helpful (2–4 sentences max). Ask one clarifying question 
   });
 
 
-  /* ── AUTH MODAL ── */
   (function initAuth() {
     const backdrop    = document.getElementById('auth-backdrop');
     const tabLogin    = document.getElementById('tab-login');
@@ -2297,7 +2287,6 @@ Be warm, concise and helpful (2–4 sentences max). Ask one clarifying question 
     function validateEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
     function markField(el, valid) { el.classList.toggle('is-error', !valid); el.classList.toggle('is-valid', valid); }
 
-    /* ── LOGIN ── */
     document.getElementById('btn-login').addEventListener('click', async () => {
       const emailEl = document.getElementById('login-email');
       const pwEl    = document.getElementById('login-pw');
@@ -2320,7 +2309,6 @@ Be warm, concise and helpful (2–4 sentences max). Ask one clarifying question 
       }
     });
 
-    /* ── FORGOT PASSWORD ── */
     document.getElementById('btn-forgot').addEventListener('click', async () => {
       const emailEl = document.getElementById('forgot-email');
       const email   = emailEl.value.trim();
@@ -2338,7 +2326,6 @@ Be warm, concise and helpful (2–4 sentences max). Ask one clarifying question 
       }
     });
 
-    /* ── STEP NAVIGATION ── */
     function goToStep(n) {
       currentStep = n;
       stepEls.forEach((el, i) => { el.style.display = (i + 1 === n) ? 'block' : 'none'; });
@@ -2349,9 +2336,6 @@ Be warm, concise and helpful (2–4 sentences max). Ask one clarifying question 
       for (let i = 1; i <= 2; i++) { document.getElementById(`line-${i}`).classList.toggle('done', i < n); }
     }
 
-    /* ══════════════════════════════════════════════════════════════
-       ★ STEP 1 → Send OTP via Flask /api/send-otp
-    ══════════════════════════════════════════════════════════════ */
     document.getElementById('btn-step1-next').addEventListener('click', async () => {
       const fname = document.getElementById('su-fname');
       const lname = document.getElementById('su-lname');
@@ -2382,12 +2366,10 @@ Be warm, concise and helpful (2–4 sentences max). Ask one clarifying question 
           document.getElementById('otp-email-label').textContent = email.value.trim();
           goToStep(2);
           startResendTimer();
-          // Clear any previous OTP boxes
           document.querySelectorAll('.otp-box').forEach(b => { b.value = ''; b.classList.remove('is-error'); });
           clearAlert(document.getElementById('otp-alert'));
           setTimeout(() => document.querySelectorAll('.otp-box')[0].focus(), 200);
         } else {
-          // Show error inline below phone field
           let errEl = document.getElementById('step1-send-error');
           if (!errEl) {
             errEl = document.createElement('div');
@@ -2415,7 +2397,6 @@ Be warm, concise and helpful (2–4 sentences max). Ask one clarifying question 
 
     document.getElementById('link-back-step1').addEventListener('click', () => goToStep(1));
 
-    /* ── OTP BOX KEYBOARD HANDLING ── */
     const otpBoxes = Array.from(document.querySelectorAll('.otp-box'));
     otpBoxes.forEach((box, idx) => {
       box.addEventListener('input', () => {
@@ -2431,7 +2412,6 @@ Be warm, concise and helpful (2–4 sentences max). Ask one clarifying question 
       });
     });
 
-    /* ── RESEND COUNTDOWN ── */
     function startResendTimer() {
       const linkEl      = document.getElementById('resend-link');
       const timerEl     = document.getElementById('resend-timer');
@@ -2445,9 +2425,7 @@ Be warm, concise and helpful (2–4 sentences max). Ask one clarifying question 
       }, 1000);
     }
 
-    /* ══════════════════════════════════════════════════════════════
-       ★ RESEND OTP → calls Flask /api/send-otp again
-    ══════════════════════════════════════════════════════════════ */
+    
     document.getElementById('resend-link').addEventListener('click', async () => {
       const email   = document.getElementById('su-email').value.trim().toLowerCase();
       const alertEl = document.getElementById('otp-alert');
@@ -2473,9 +2451,7 @@ Be warm, concise and helpful (2–4 sentences max). Ask one clarifying question 
       }
     });
 
-    /* ══════════════════════════════════════════════════════════════
-       ★ STEP 2 → Verify OTP via Flask /api/verify-otp
-    ══════════════════════════════════════════════════════════════ */
+  
     document.getElementById('btn-verify').addEventListener('click', async () => {
       const email   = document.getElementById('su-email').value.trim().toLowerCase();
       const otp     = otpBoxes.map(b => b.value).join('');
@@ -2512,7 +2488,6 @@ Be warm, concise and helpful (2–4 sentences max). Ask one clarifying question 
       }
     });
 
-    /* ── PASSWORD STRENGTH ── */
     document.getElementById('su-pw').addEventListener('input', function () {
       const val = this.value; let score = 0;
       if (val.length >= 8) score++; if (/[A-Z]/.test(val)) score++; if (/[0-9]/.test(val)) score++; if (/[^A-Za-z0-9]/.test(val)) score++;
@@ -2529,7 +2504,6 @@ Be warm, concise and helpful (2–4 sentences max). Ask one clarifying question 
       lbl.textContent = lvl.label; lbl.style.color = lvl.color !== 'transparent' ? lvl.color : 'var(--ash)';
     });
 
-    /* ── STEP 3 → Create Firebase Account ── */
     document.getElementById('btn-signup-submit').addEventListener('click', async () => {
       const pw = document.getElementById('su-pw').value;
       const pw2 = document.getElementById('su-pw2').value;
@@ -2558,7 +2532,6 @@ Be warm, concise and helpful (2–4 sentences max). Ask one clarifying question 
 
     document.getElementById('btn-go-dashboard').addEventListener('click', closeModal);
 
-    /* ── GOOGLE LOGIN ── */
     document.getElementById('btn-google-login').addEventListener('click', async () => {
       let alertEl = document.getElementById('login-alert');
       if (!alertEl) { alertEl = document.createElement('div'); alertEl.id = 'login-alert'; alertEl.className = 'auth-alert'; document.getElementById('btn-login').parentNode.insertBefore(alertEl, document.getElementById('btn-login')); }
@@ -2589,7 +2562,6 @@ Be warm, concise and helpful (2–4 sentences max). Ask one clarifying question 
   }
 
 
-  /* ── FLOATING WIDGET ── */
   (function initWidget() {
     const fab        = document.getElementById('fai-fab');
     const contacts   = document.getElementById('fai-contacts');

@@ -14,9 +14,6 @@
     rel="stylesheet" />
 
   <style>
-    /* ============================================================
-       DESIGN TOKENS
-    ============================================================ */
     :root {
       --cream: #f6f3ed;
       --cream-dark: #edeae1;
@@ -84,9 +81,6 @@
       border-radius: 4px;
     }
 
-    /* ============================================================
-       NAVIGATION
-    ============================================================ */
     .nav {
       position: sticky;
       top: 0;
@@ -151,7 +145,6 @@
       align-items: center;
     }
 
-    /* ── NAV USER PROFILE ── */
     .nav-user {
       display: none;
       align-items: center;
@@ -238,9 +231,6 @@
       color: var(--ink);
     }
 
-    /* ============================================================
-       PAGE HERO
-    ============================================================ */
     .page-hero {
       background: var(--ink);
       padding: 64px 60px 60px;
@@ -340,9 +330,6 @@
       margin-top: 6px;
     }
 
-    /* ============================================================
-       FILTER BAR
-    ============================================================ */
     .filter-bar {
       background: var(--white);
       border-bottom: 1px solid var(--divider);
@@ -444,9 +431,6 @@
       box-shadow: 0 0 0 3px rgba(184, 144, 80, .1);
     }
 
-    /* ============================================================
-       MAIN CONTENT
-    ============================================================ */
     .main-wrap {
       max-width: 1300px;
       margin: 0 auto;
@@ -487,9 +471,6 @@
       -webkit-appearance: none;
     }
 
-    /* ============================================================
-       FACULTY GRID
-    ============================================================ */
     #faculty-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -646,9 +627,7 @@
       opacity: .7;
     }
 
-    /* ============================================================
-       FOOTER
-    ============================================================ */
+    
     .site-footer {
       background: var(--ink);
       padding: 60px 60px 36px;
@@ -781,9 +760,6 @@
       color: #fff;
     }
 
-    /* ============================================================
-       TRAINER PROFILE MODAL
-    ============================================================ */
     .tmodal-overlay {
       position: fixed;
       inset: 0;
@@ -1121,9 +1097,6 @@
       border-color: var(--ink);
     }
 
-    /* ============================================================
-       RESPONSIVE
-    ============================================================ */
     @media (max-width:1024px) {
       .nav             { padding: 0 28px; }
       .nav-links       { display: none; }
@@ -1151,7 +1124,6 @@
 
 <body>
 
-  <!-- NAV -->
   <nav class="nav" role="navigation">
     <a href="index.html" class="nav-logo"><img src="https://cdn.nareshit.com/images/naresh-it-logo2.png"
         alt="NareshIT" /></a>
@@ -1174,7 +1146,6 @@
     </div>
   </nav>
 
-  <!-- PAGE HERO -->
   <div class="page-hero">
     <div class="page-hero-inner">
       <div class="hero-left">
@@ -1200,7 +1171,6 @@
     </div>
   </div>
 
-  <!-- FILTER BAR -->
   <div class="filter-bar">
     <div class="filter-inner" id="filter-bar">
       <div class="filter-search">
@@ -1210,7 +1180,6 @@
     </div>
   </div>
 
-  <!-- MAIN CONTENT -->
   <div class="main-wrap">
     <div class="result-bar">
       <div>
@@ -1226,7 +1195,6 @@
     <div id="faculty-grid"></div>
   </div>
 
-  <!-- TRAINER PROFILE MODAL -->
   <div class="tmodal-overlay" id="tmodal-overlay">
     <div class="tmodal" id="tmodal">
 
@@ -1303,7 +1271,6 @@
     </div>
   </div>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="fgrid-footer">
       <div>
@@ -1362,7 +1329,6 @@
 
   <script type="module">
 
-    /* ── Firebase ── */
     import { initializeApp }
       from 'https://www.gstatic.com/firebasejs/12.11.0/firebase-app.js';
     import { getAuth, onAuthStateChanged, signOut }
@@ -1441,11 +1407,7 @@
       window.open('https://wa.me/+918179191999', '_blank');
     });
 
-    /* ----------------------------------------------------------
-       TRAINER DATA
-    ---------------------------------------------------------- */
     const TRAINERS = [
-      // Java / Full Stack
       { name: 'Mr. Nataraj', role: 'Java / J2EE Trainer', img: 'https://images.nareshit.com/images/image_1706080522457.jpg', domain: 'java' },
       { name: 'Mr. Hari Krishna', role: 'Java / J2EE Trainer', img: 'https://images.nareshit.com/images/image_1706081180938.jpg', domain: 'java' },
       { name: 'Mr. K V Rao', role: 'Python & Java Trainer', img: 'https://images.nareshit.com/images/image_1706081294209.jpg', domain: 'java' },
@@ -1461,17 +1423,17 @@
       { name: 'Mr. Jagannath Bhandari', role: 'Java Trainer', img: 'https://images.nareshit.com/image_1712224915953.png', domain: 'java' },
       { name: 'Mr. Mahendra', role: 'Core Java Trainer', img: 'https://images.nareshit.com/image_1712224915953.png', domain: 'java' },
       { name: 'Mr. Ram Shankar', role: 'Full Stack Java Trainer', img: 'https://images.nareshit.com/Full_Stack_Java_Naresh_IT.png', domain: 'java' },
-      // Python
+    
       { name: 'Mr. Shareef', role: 'Full Stack Python Trainer', img: 'https://images.nareshit.com/Full_Stack_Python_Mr._Shareef.png', domain: 'python' },
       { name: 'Mr. Sai Vardhan', role: 'Python Trainer', img: 'https://images.nareshit.com/image_1712224915953.png', domain: 'python' },
       { name: 'Mr. Naseer Basha', role: 'DSA with Python Trainer', img: 'https://images.nareshit.com/Data_Structures_&_Algorithms_with_Python_in_NIT.png', domain: 'python' },
-      // .NET
+      
       { name: 'Mr. Sudhakar L', role: 'MS.NET & Oracle Trainer', img: 'https://images.nareshit.com/images/image_1712225936061.jpg', domain: 'dotnet' },
       { name: 'Mr. Bangar Raju', role: 'MS.NET Trainer', img: 'https://images.nareshit.com/images/image_1712226550177.jpg', domain: 'dotnet' },
       { name: 'Mr. Yawar Ali', role: 'MS.Net Trainer', img: 'https://images.nareshit.com/images/image_1714022445570.png', domain: 'dotnet' },
       { name: 'Mr. Vishwa', role: '.Net Trainer', img: 'https://images.nareshit.com/image_1712224915953.png', domain: 'dotnet' },
       { name: 'Ms. Prathibha', role: 'C#.Net & Full Stack .Net', img: 'https://images.nareshit.com/C#.Net_&_Full_Stack_.Net_at_Nareshit.png', domain: 'dotnet' },
-      // DevOps & Cloud
+      
       { name: 'Mr. Veera Babu', role: 'DevOps Trainer', img: 'https://images.nareshit.com/images/image_1714369263599.png', domain: 'devops' },
       { name: 'Mr. Wasif', role: 'Azure DevOps Trainer', img: 'https://images.nareshit.com/images/image_1712145736743.png', domain: 'devops' },
       { name: 'Mr. Naveen', role: 'Azure DevOps Trainer', img: 'https://images.nareshit.com/images/image_1712226116630.png', domain: 'devops' },
@@ -1487,7 +1449,7 @@
       { name: 'Mr. Bhaskar', role: 'Azure Data Engineer Trainer', img: 'https://images.nareshit.com/image_1712224915953.png', domain: 'devops' },
       { name: 'Mr. Gareth', role: 'Azure Data Engineer Trainer', img: 'https://images.nareshit.com/images/image_1712145837825.png', domain: 'devops' },
       { name: 'Mr. Prakash Senapathi', role: 'DevOps Trainer', img: 'https://images.nareshit.com/images/image_1712226331634.jpg', domain: 'devops' },
-      // Data Science & AI
+    
       { name: 'Mr. Daniel', role: 'Data Science Trainer', img: 'https://images.nareshit.com/images/image_1712143674289.png', domain: 'datascience' },
       { name: 'Mr. Omkar', role: 'Data Science Trainer', img: 'https://images.nareshit.com/images/image_1712225424004.jpg', domain: 'datascience' },
       { name: 'Mr. Shiva Rama Krishna', role: 'Data Science Trainer', img: 'https://images.nareshit.com/Mr._Shiva_Rama_Krishna.jpg', domain: 'datascience' },
@@ -1507,7 +1469,7 @@
       { name: 'Mr. Abhijeeth', role: 'DSA with Java & System Design', img: 'https://images.nareshit.com/Data_Analytics_&_Business_Analytics.png', domain: 'datascience' },
       { name: 'Mr. Manohar (DA)', role: 'Data Analytics & Business Analytics', img: 'https://images.nareshit.com/Data_Analytics_&_Business_Analytics_.png', domain: 'datascience' },
       { name: 'Sr. Data Scientist (2)', role: 'Sr. Data Scientist', img: 'https://images.nareshit.com/Sr.Data_Scientist_.png', domain: 'datascience' },
-      // Analytics
+  
       { name: 'Miss. Mohana', role: 'Power BI Trainer', img: 'https://images.nareshit.com/images/image_1712145883843.png', domain: 'analytics' },
       { name: 'Mr. Vijay Rama Raju', role: 'Power BI Trainer', img: 'https://images.nareshit.com/images/image_1712146074930.png', domain: 'analytics' },
       { name: 'Mr. Laxman', role: 'Power BI Trainer', img: 'https://images.nareshit.com/image_1712224915953.png', domain: 'analytics' },
@@ -1517,7 +1479,7 @@
       { name: 'Mr. Rajendra Prasad', role: 'Data Analytics Trainer', img: 'https://images.nareshit.com/image_1712142972236.png', domain: 'analytics' },
       { name: 'Mr. Sai', role: 'Data Analytics Trainer', img: 'https://images.nareshit.com/image_1712142972236.png', domain: 'analytics' },
       { name: 'Miss. Tarakeshwari', role: 'Data Analytics & Business Analytics', img: 'https://images.nareshit.com/Data_Analytics_&_Business_Analytics.png', domain: 'analytics' },
-      // Testing
+    
       { name: 'Mr. Mahesh', role: 'Selenium Trainer', img: 'https://images.nareshit.com/images/image_1712143755898.png', domain: 'testing' },
       { name: 'Mr. Vamshi Mohan', role: 'Selenium Trainer', img: 'https://images.nareshit.com/images/image_1713328226353.png', domain: 'testing' },
       { name: 'Mr. Sumanth', role: 'Selenium Trainer', img: 'https://images.nareshit.com/images/image_1714020591238.png', domain: 'testing' },
@@ -1528,28 +1490,28 @@
       { name: 'Mr. Kumar', role: 'Data Structures Trainer', img: 'https://images.nareshit.com/image_1712224915953.png', domain: 'testing' },
       { name: 'Mr. Karthik', role: 'Playwright Automation Trainer', img: 'https://images.nareshit.com/Playwright_Automation_at_Naresh_IT.png', domain: 'testing' },
       { name: 'Mr. Madhusudhan', role: 'Full Stack Testing with AI', img: 'https://images.nareshit.com/Full_Stack_Testing_with_AI_at_NARESHIT_.png', domain: 'testing' },
-      // Web & UI
+    
       { name: 'Mr. Sudhakar Sharma', role: 'UI Full Stack Trainer', img: 'https://images.nareshit.com/Mr._Sudhakar_Sharma.jpg', domain: 'webdev' },
       { name: 'Mr. Durga Prasad', role: 'UI Full Stack Trainer', img: 'https://images.nareshit.com/images/image_1712479105312.jpeg', domain: 'webdev' },
       { name: 'Mr. Sanjay', role: 'UI Full Stack Trainer', img: 'https://images.nareshit.com/images/image_1712479159158.jpeg', domain: 'webdev' },
       { name: 'Mr. Sagar', role: 'UI Full Stack Trainer', img: 'https://images.nareshit.com/images/image_1712479204926.jpeg', domain: 'webdev' },
       { name: 'Mr. Prasad', role: 'HTML | CSS | JavaScript Trainer', img: 'https://images.nareshit.com/images/image_1712145958824.png', domain: 'webdev' },
-      // C / C++
+  
       { name: 'Mr. Kishore', role: 'C & C++ Trainer', img: 'https://images.nareshit.com/images/image_1706083661572.jpg', domain: 'cprog' },
       { name: 'Mr. Srinivas', role: 'C / C++ Trainer', img: 'https://images.nareshit.com/images/image_1714023599416.png', domain: 'cprog' },
       { name: 'Mr. Srikanth', role: 'C Language Trainer', img: 'https://images.nareshit.com/image_1712224915953.png', domain: 'cprog' },
-      // Database
+  
       { name: 'Mr. Shiva Chaitanya', role: 'Oracle Trainer', img: 'https://images.nareshit.com/images/image_1712225986049.jpg', domain: 'database' },
       { name: 'Mr. Sharma', role: 'Oracle Trainer', img: 'https://images.nareshit.com/images/image_1712479336344.jpeg', domain: 'database' },
-      // Salesforce
+      
       { name: 'Mr. Satish', role: 'Salesforce Trainer', img: 'https://images.nareshit.com/image_1712142972236.png', domain: 'salesforce' },
       { name: 'Mr. Adhan (SF)', role: 'Salesforce Trainer', img: 'https://images.nareshit.com/image_1712224915953.png', domain: 'salesforce' },
       { name: 'Ms. Sk Asma', role: 'Salesforce Trainer', img: 'https://images.nareshit.com/image_1712224915953.png', domain: 'salesforce' },
       { name: 'Mr. Faizal Khan', role: 'Salesforce CRM with LWC Trainer', img: 'https://images.nareshit.com/Salesforce_CRM_with_LWC_at_NIT.png', domain: 'salesforce' },
-      // Cyber Security
+    
       { name: 'Miss. Priya', role: 'Cyber Security Trainer', img: 'https://images.nareshit.com/image_1712142972236.png', domain: 'security' },
       { name: 'Mr. John', role: 'Cyber Security & Ethical Hacking', img: 'https://images.nareshit.com/Cyber_Security_&_Ethical_Hacking.png', domain: 'security' },
-      // Others
+    
       { name: 'Real-Time Expert', role: 'Sr. Trainer', img: 'https://images.nareshit.com/images/image_1712142972236.png', domain: 'others' },
       { name: 'Mr. Ramakanth', role: 'Digital Marketing Trainer', img: 'https://images.nareshit.com/images/image_1712146156277.png', domain: 'others' },
       { name: 'Mr. Amith Pandey', role: 'Spoken English Trainer', img: 'https://images.nareshit.com/image_1712224915953.png', domain: 'others' },
@@ -1707,9 +1669,7 @@
       renderGrid();
     }
 
-    /* ----------------------------------------------------------
-       TRAINER PROFILE MODAL
-    ---------------------------------------------------------- */
+  
     function openTrainerModal(trainer) {
       const photo = document.getElementById('tmodal-photo');
       const initials = document.getElementById('tmodal-initials');
@@ -1758,9 +1718,7 @@
       if (list[idx]) openTrainerModal(list[idx]);
     });
 
-    /* ----------------------------------------------------------
-       GROQ BACKEND API — Generate trainer profile info
-    ---------------------------------------------------------- */
+    
     async function fetchTrainerInfo(trainer) {
       try {
         document.getElementById('ai-loading').style.display = 'flex';

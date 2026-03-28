@@ -27,7 +27,6 @@
     ::-webkit-scrollbar{width:3px;}
     ::-webkit-scrollbar-track{background:transparent;}
     ::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px;}
-    /* ── NAV ── */
     .nav{position:sticky;top:0;z-index:400;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 60px;background:rgba(246,243,237,.96);backdrop-filter:blur(24px);box-shadow:0 1px 0 var(--divider);}
     .nav-logo img{height:38px;}
     .nav-links{display:flex;gap:36px;list-style:none;align-items:center;}
@@ -35,7 +34,6 @@
     .nav-links a::after{content:'';position:absolute;left:0;bottom:-4px;right:0;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease-std);}
     .nav-links a:hover,.nav-links a.active{color:var(--ink);}
     .nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1);}
-    /* Nav Auth Snippet CSS */
     .nav-user {
       display: none;
       align-items: center; gap: 10px;
@@ -73,8 +71,7 @@
       padding:9px 20px;background:transparent;border:1.5px solid var(--divider);border-radius:var(--r-pill);font-family:var(--font-sans);font-size:11px;font-weight:600;color:var(--ash);cursor:pointer;transition:all .3s;
     }
     .btn-nav-ghost:hover{border-color:var(--ink);color:var(--ink);}
-    /* .btn-nav-fill removed as 'Learn More' is not needed */
-    /* ── HERO ── */
+    
     .hero{background:var(--ink);padding:96px 60px 88px;position:relative;overflow:hidden;}
     .hero::before{content:'';position:absolute;inset:0;pointer-events:none;
       background:
@@ -93,16 +90,13 @@
     .hero-pills{display:flex;flex-wrap:wrap;gap:10px;}
     .hero-pill{padding:7px 18px;background:rgba(246,243,237,.07);border:1px solid rgba(246,243,237,.12);border-radius:var(--r-pill);font-size:12px;color:rgba(246,243,237,.65);font-weight:500;}
     .hero-pill strong{color:var(--gold-light);font-weight:700;}
-    /* ── MARQUEE ── */
     .marquee-bar{background:var(--gold);overflow:hidden;padding:0;}
     .mq-track{display:flex;animation:mq 20s linear infinite;width:max-content;padding:14px 0;}
     @keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
     .mq-item{padding:0 28px;display:flex;align-items:center;gap:10px;white-space:nowrap;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.85);}
     .mq-dot{width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.4);}
-    /* ── MAIN ── */
     .page-wrap{max-width:1280px;margin:0 auto;padding:72px 60px 100px;}
     .two-col{display:grid;grid-template-columns:1fr 400px;gap:72px;align-items:start;}
-    /* ── PHOTO + INTRO ── */
     .careers-photo{border-radius:20px;overflow:hidden;position:relative;margin-bottom:48px;box-shadow:0 20px 60px rgba(17,16,16,.12);}
     .careers-photo img{width:100%;height:340px;object-fit:cover;object-position:center;display:block;}
     .careers-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(14,13,12,.5) 0%,transparent 50%);}
@@ -114,7 +108,6 @@
     .section-intro h2{font-family:var(--font-serif);font-size:clamp(30px,4vw,46px);font-weight:400;letter-spacing:-1.5px;line-height:1.05;margin-bottom:16px;}
     .section-intro h2 em{font-style:italic;color:var(--gold);}
     .section-intro p{font-size:15px;color:var(--ash);line-height:1.9;}
-    /* ── ROLES ── */
     .roles-label{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:24px;}
     .roles-grid{display:flex;flex-direction:column;gap:12px;margin-bottom:56px;}
     .role-card{
@@ -144,7 +137,6 @@
       border-radius:var(--r-pill);font-size:10px;font-weight:700;
       letter-spacing:1px;text-transform:uppercase;color:var(--green);
     }
-    /* ── WHY NARESHIT ── */
     .why-section{background:var(--ink);border-radius:20px;padding:48px;margin-bottom:56px;position:relative;overflow:hidden;}
     .why-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 100% at 100% 0%,rgba(184,144,80,.1),transparent);}
     .why-eyebrow{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold-light);margin-bottom:14px;position:relative;z-index:1;}
@@ -160,7 +152,6 @@
     .why-icon{font-size:20px;margin-bottom:8px;}
     .why-title{font-size:14px;font-weight:600;color:rgba(246,243,237,.85);margin-bottom:5px;}
     .why-text{font-size:12px;color:rgba(246,243,237,.4);line-height:1.7;}
-    /* ── HOW TO APPLY ── */
     .apply-section{background:var(--gold);border-radius:var(--r-lg);padding:40px 44px;position:relative;overflow:hidden;}
     .apply-section::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.07));}
     .apply-eyebrow{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:12px;position:relative;z-index:1;}
@@ -174,7 +165,6 @@
       transition:all .4s var(--ease-silk);position:relative;z-index:1;
     }
     .apply-btn:hover{background:var(--white);color:var(--ink);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.15);}
-    /* ── SIDEBAR: APPLICATION FORM ── */
     .sidebar{position:sticky;top:88px;}
     .enq-card{background:var(--white);border:1px solid var(--divider);border-radius:20px;overflow:hidden;box-shadow:0 8px 40px rgba(17,16,16,.08);}
     .enq-hd{background:var(--ink);padding:26px 28px;position:relative;overflow:hidden;}
@@ -217,7 +207,6 @@
     .es-sub{font-size:13px;color:var(--ash);line-height:1.7;margin-bottom:20px;}
     .es-again{padding:9px 22px;background:transparent;border:1.5px solid var(--divider);border-radius:var(--r-pill);font-family:var(--font-sans);font-size:12px;font-weight:600;color:var(--ash);cursor:pointer;transition:all .3s;}
     .es-again:hover{border-color:var(--ink);color:var(--ink);}
-    /* ── FOOTER ── */
     .site-footer{background:var(--ink);padding:60px 60px 36px;}
     .fgrid{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:52px;max-width:1280px;margin:0 auto 48px;}
     .flogo img{height:34px;filter:brightness(0) invert(1);opacity:.8;margin-bottom:16px;}
@@ -236,7 +225,6 @@
     .fbtn:hover{transform:scale(1.12);}
     .fbtn-wa{background:#25D366;color:#fff;}
     .fbtn-ph{background:var(--gold);color:#fff;}
-    /* Responsive */
     @media(max-width:1100px){
       .two-col{grid-template-columns:1fr;gap:48px;}
       .sidebar{position:static;}
@@ -256,8 +244,6 @@
   </style>
 </head>
 <body>
-
-<!-- NAV -->
 <nav class="nav">
   <a href="index.html" class="nav-logo"><img src="https://cdn.nareshit.com/images/naresh-it-logo2.png" alt="NareshIT"></a>
   <ul class="nav-links">
@@ -270,7 +256,6 @@
     <li><a href="contact.html">Contact</a></li>
   </ul>
   <div class="nav-actions" id="nav-actions">
-    <!-- Shown when logged in -->
     <div class="nav-user" id="nav-user">
       <div class="nav-user-avatar" id="nav-user-avatar">?</div>
       <div class="nav-user-info">
@@ -279,13 +264,9 @@
       </div>
       <button class="nav-signout" id="nav-signout" title="Sign out">✕</button>
     </div>
-    <!-- Shown when logged out -->
     <button class="btn-nav-ghost" id="nav-login-btn" type="button">Login</button>
-    <!-- Learn More button removed as requested -->
   </div>
 </nav>
-
-<!-- HERO -->
 <div class="hero">
   <div class="hero-glyph">NIT</div>
   <div class="hero-inner">
@@ -301,19 +282,15 @@
   </div>
 </div>
 
-<!-- MARQUEE -->
 <div class="marquee-bar">
   <div class="mq-track" id="mq"></div>
 </div>
 
-<!-- MAIN -->
 <div class="page-wrap">
   <div class="two-col">
 
-    <!-- LEFT: Careers content -->
     <div>
 
-      <!-- Photo + intro -->
       <div class="careers-photo">
         <img src="https://images.nareshit.com/images/image_1712580881781.jpg"
              alt="NareshIT Careers — Join our team"
@@ -330,7 +307,6 @@
         <p>Join our team and be part of an innovative, collaborative, and growth-oriented workplace. We are always looking for passionate, dedicated professionals who want to make a real difference in education and technology.</p>
       </div>
 
-      <!-- Role Cards -->
       <div class="roles-label">Open Positions</div>
       <div class="roles-grid">
 
@@ -396,7 +372,6 @@
 
       </div>
 
-      <!-- Why NareshIT -->
       <div class="why-section">
         <div class="why-eyebrow">Why Work With Us</div>
         <h3>A Workplace Worth <em>Joining</em></h3>
@@ -423,8 +398,6 @@
           </div>
         </div>
       </div>
-
-      <!-- How to Apply -->
       <div class="apply-section">
         <div class="apply-eyebrow">How to Apply</div>
         <h3>Ready to Join the Team?</h3>
@@ -435,8 +408,6 @@
       </div>
 
     </div>
-
-    <!-- RIGHT: Application Form -->
     <div class="sidebar" id="apply-form">
       <div class="enq-card">
         <div class="enq-hd">
@@ -523,8 +494,6 @@
 
   </div>
 </div>
-
-<!-- FOOTER -->
 <footer class="site-footer">
   <div class="fgrid">
     <div>
@@ -568,7 +537,6 @@
 </div>
 
 <script>
-  // MARQUEE
   const roles = [
     'Faculty Registration', 'Lab Coordinators', 'Mentors', 'Course Counsellors',
     'Telecallers', 'Digital Marketing Executives', 'Innovative Culture', 'Career Growth',
@@ -577,8 +545,6 @@
   const mq = document.getElementById('mq');
   const html = roles.map(r => `<div class="mq-item"><span class="mq-dot"></span>${r}</div>`).join('');
   if (mq) mq.innerHTML = html + html;
-
-  // SCROLL REVEAL for role cards
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -588,8 +554,6 @@
     });
   }, { threshold: 0.1 });
   document.querySelectorAll('.role-card').forEach(el => obs.observe(el));
-
-  // FORM SUBMIT
   document.getElementById('careers-form').addEventListener('submit', async function(e) {
     e.preventDefault();
     let ok = true;
@@ -616,7 +580,6 @@
     btn.disabled = false;
     txt.textContent = 'Submit Application →';
   });
-  // Clear errors on input
   ['c-name','c-email','c-mobile','c-role'].forEach(id => {
     const el = document.getElementById(id);
     if (!el) return;
@@ -635,9 +598,7 @@
 <script type="module">
   import { onAuthStateChanged, signOut }
     from 'https://www.gstatic.com/firebasejs/12.11.0/firebase-auth.js';
-  // NOTE: you must already have Firebase App & Auth initialized as `auth`
-  // e.g. const auth = getAuth(firebaseApp)
-  // Replace `auth` with your actual instance variable if necessary
+
   const LS_KEY = 'nit_user';
   function getInitials(name) {
     if (!name) return '?';
@@ -662,16 +623,13 @@
     loginBtn.classList.remove('hidden');
     try { localStorage.removeItem(LS_KEY); } catch(_) {}
   }
-  // Instant render from cache (no flicker)
   try {
     const cached = localStorage.getItem(LS_KEY);
     if (cached) { const { name, email } = JSON.parse(cached); showNavProfile(name, email); }
   } catch(_) {}
-  // Sign-out button
   document.getElementById('nav-signout')?.addEventListener('click', () => {
     signOut(auth).then(hideNavProfile).catch(console.error);
   });
-  // Firebase auth state (authoritative truth)
   onAuthStateChanged(auth, user => {
     if (user) {
       showNavProfile(

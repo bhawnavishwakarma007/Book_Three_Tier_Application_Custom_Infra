@@ -30,7 +30,6 @@
     ::-webkit-scrollbar-track{background:var(--cream-dark);}
     ::-webkit-scrollbar-thumb{background:var(--gold);border-radius:4px;}
 
-    /* ─── NAV ─── */
     .nav{position:sticky;top:0;z-index:400;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 60px;background:rgba(246,243,237,.96);backdrop-filter:blur(24px);box-shadow:0 1px 0 var(--divider);}
     .nav-logo img{height:38px;}
     .nav-links{display:flex;gap:36px;list-style:none;align-items:center;}
@@ -40,7 +39,6 @@
     .nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1);}
     .nav-end{display:flex;gap:10px;align-items:center;}
 
-    /* ── NAV USER PROFILE ── */
     .nav-user{display:none;align-items:center;gap:10px;}
     .nav-user.show{display:flex;}
     .nav-user-avatar{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--ink));color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-serif);font-size:13px;font-weight:700;flex-shrink:0;}
@@ -51,13 +49,10 @@
     .nav-signout:hover{border-color:var(--ink);color:var(--ink);}
     #nav-login-btn{transition:all .25s;}
     #nav-login-btn.hidden{display:none;}
-
     .btn-ng{padding:9px 20px;background:transparent;border:1.5px solid var(--divider);border-radius:var(--r-pill);font-family:var(--font-sans);font-size:12px;font-weight:500;color:var(--ash);cursor:pointer;transition:all .3s;}
     .btn-ng:hover{border-color:var(--ink);color:var(--ink);}
     .btn-nf{padding:9px 22px;background:var(--gold);border:1.5px solid var(--gold);border-radius:var(--r-pill);font-family:var(--font-sans);font-size:12px;font-weight:600;color:var(--white);cursor:pointer;transition:all .35s var(--ease-silk);}
     .btn-nf:hover{background:var(--ink);border-color:var(--ink);}
-
-    /* ─── HERO ─── */
     .hero{background:var(--ink);padding:80px 60px 70px;position:relative;overflow:hidden;}
     .hero::before{content:'';position:absolute;inset:0;pointer-events:none;
       background:
@@ -78,12 +73,8 @@
     .hcard-label{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(246,243,237,.3);margin-bottom:3px;}
     .hcard-val{font-size:14px;font-weight:500;color:rgba(246,243,237,.85);}
     .hcard-sub{font-size:11px;color:rgba(246,243,237,.35);margin-top:1px;}
-
-    /* ─── MAIN LAYOUT ─── */
     .page-wrap{max-width:1280px;margin:0 auto;padding:72px 60px 100px;}
     .two-col{display:grid;grid-template-columns:1fr 420px;gap:56px;align-items:start;}
-
-    /* ─── FORM ─── */
     .form-header{margin-bottom:36px;}
     .form-eyebrow{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
     .form-header h2{font-family:var(--font-serif);font-size:clamp(32px,4vw,48px);font-weight:400;line-height:1;letter-spacing:-1px;color:var(--ink);margin-bottom:12px;}
@@ -120,8 +111,6 @@
     .btn-again{padding:11px 28px;background:transparent;border:1.5px solid var(--divider);border-radius:var(--r-pill);font-family:var(--font-sans);font-size:12px;font-weight:600;color:var(--ash);cursor:pointer;transition:all .3s;}
     .btn-again:hover{border-color:var(--ink);color:var(--ink);}
     @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
-
-    /* ─── SIDEBAR ─── */
     .sidebar{display:flex;flex-direction:column;gap:20px;position:sticky;top:96px;}
     .info-card{background:var(--white);border:1px solid var(--divider);border-radius:var(--r-lg);padding:28px;box-shadow:var(--shadow-card);transition:box-shadow .4s var(--ease-silk);}
     .info-card:hover{box-shadow:var(--shadow-hover);}
@@ -158,8 +147,6 @@
     .soc-fb .soc-icon{background:rgba(24,119,242,.1);}
     .soc-ig .soc-icon{background:rgba(225,48,108,.1);}
     .soc-li .soc-icon{background:rgba(10,102,194,.1);}
-
-    /* ─── STATS BAND ─── */
     .stats-band{background:var(--ink);border-radius:var(--r-lg);padding:36px 40px;margin-bottom:56px;display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;overflow:hidden;}
     .stats-band::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 100% at 100% 0%,rgba(184,144,80,.1),transparent);}
     .stat-item{position:relative;z-index:1;text-align:center;padding:0 20px;}
@@ -167,8 +154,6 @@
     .stat-num{font-family:var(--font-serif);font-size:42px;font-weight:300;line-height:1;color:rgba(246,243,237,.9);letter-spacing:-1px;}
     .stat-num em{font-style:italic;color:var(--gold);}
     .stat-lbl{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(246,243,237,.3);margin-top:6px;}
-
-    /* ─── FAQ ─── */
     .faq-section{margin-top:72px;}
     .faq-hd{text-align:center;margin-bottom:40px;}
     .faq-hd h2{font-family:var(--font-serif);font-size:clamp(28px,4vw,44px);font-weight:400;color:var(--ink);margin-bottom:10px;}
@@ -184,8 +169,6 @@
     .faq-a{max-height:0;overflow:hidden;transition:max-height .4s var(--ease-silk),padding .3s;}
     .faq-item.open .faq-a{max-height:200px;}
     .faq-a-inner{padding:0 20px 18px;font-size:13px;color:var(--ash);line-height:1.8;border-top:1px solid var(--divider);}
-
-    /* ─── FOOTER ─── */
     .site-footer{background:var(--ink);padding:60px 60px 36px;margin-top:80px;}
     .fgrid{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:52px;max-width:1280px;margin:0 auto 48px;}
     .flogo img{height:34px;filter:brightness(0) invert(1);opacity:.8;margin-bottom:16px;}
@@ -204,8 +187,6 @@
     .fbtn:hover{transform:scale(1.12);box-shadow:0 8px 30px rgba(0,0,0,.22);}
     .fbtn-wa{background:#25D366;color:#fff;}
     .fbtn-ph{background:var(--gold);color:#fff;}
-
-    /* ─── RESPONSIVE ─── */
     @media(max-width:1100px){
       .two-col{grid-template-columns:1fr;}
       .sidebar{position:static;display:grid;grid-template-columns:1fr 1fr;gap:16px;}
@@ -233,8 +214,6 @@
   </style>
 </head>
 <body>
-
-<!-- NAV -->
 <nav class="nav">
   <a href="index.html" class="nav-logo"><img src="https://cdn.nareshit.com/images/naresh-it-logo2.png" alt="NareshIT"></a>
   <ul class="nav-links">
@@ -245,7 +224,6 @@
     <li><a href="contact.html" class="active">Contact</a></li>
   </ul>
   <div class="nav-end">
-    <!-- Logged-in profile pill -->
     <div class="nav-user" id="nav-user">
       <div class="nav-user-avatar" id="nav-user-avatar">?</div>
       <div class="nav-user-info">
@@ -254,13 +232,10 @@
       </div>
       <button class="nav-signout" id="nav-signout">Sign out</button>
     </div>
-    <!-- Logged-out buttons -->
     <button class="btn-ng" id="nav-login-btn" type="button">Login</button>
     <button class="btn-nf" id="enroll-btn" type="button">Enroll Now</button>
   </div>
 </nav>
-
-<!-- HERO -->
 <div class="hero">
   <div class="hero-inner">
     <div>
@@ -304,8 +279,6 @@
     </div>
   </div>
 </div>
-
-<!-- STATS BAND -->
 <div class="page-wrap" style="padding-bottom:0; padding-top:52px;">
   <div class="stats-band">
     <div class="stat-item"><div class="stat-num">22<em>+</em></div><div class="stat-lbl">Years of Excellence</div></div>
@@ -314,12 +287,8 @@
     <div class="stat-item"><div class="stat-num">95<em>%</em></div><div class="stat-lbl">Success Rate</div></div>
   </div>
 </div>
-
-<!-- MAIN TWO COLUMN -->
 <div class="page-wrap" style="padding-top:56px;">
   <div class="two-col">
-
-    <!-- FORM -->
     <div id="enquiry-form">
       <div class="form-header">
         <div class="form-eyebrow">Enquiry Form</div>
@@ -442,8 +411,6 @@
           <button type="submit" class="btn-submit" id="submit-btn"><span id="submit-txt">Send My Enquiry ✦</span></button>
         </div>
       </form>
-
-      <!-- Success state -->
       <div class="form-success" id="form-success">
         <div class="success-icon">✓</div>
         <h3>Enquiry Received!</h3>
@@ -451,11 +418,7 @@
         <button class="btn-again" id="btn-again" type="button">Submit Another Enquiry</button>
       </div>
     </div>
-
-    <!-- SIDEBAR -->
     <div class="sidebar">
-
-      <!-- Contact Details -->
       <div class="info-card">
         <div class="info-card-hd">
           <div class="info-card-icon">📋</div>
@@ -497,8 +460,6 @@
           </div>
         </div>
       </div>
-
-      <!-- Office Hours -->
       <div class="info-card">
         <div class="info-card-hd">
           <div class="info-card-icon">🕐</div>
@@ -508,8 +469,6 @@
         <div class="hours-row"><span class="hours-day">Saturday</span><span class="hours-time">9:00 AM – 5:00 PM <span class="hours-badge" id="status-sat">Open</span></span></div>
         <div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-time" style="color:var(--ash)">Closed <span class="hours-closed">Closed</span></span></div>
       </div>
-
-      <!-- Map -->
       <div class="map-card">
         <div class="map-frame" style="height:260px;padding:0;">
           <iframe
@@ -526,8 +485,6 @@
           <button class="btn-directions" id="btn-directions" type="button">Get Directions ↗</button>
         </div>
       </div>
-
-      <!-- Social -->
       <div class="info-card">
         <div class="info-card-hd">
           <div class="info-card-icon">🌐</div>
@@ -554,8 +511,6 @@
       </div>
     </div>
   </div>
-
-  <!-- FAQ -->
   <div class="faq-section">
     <div class="faq-hd">
       <h2>Frequently Asked <em>Questions</em></h2>
@@ -564,8 +519,6 @@
     <div class="faq-grid" id="faq-grid"></div>
   </div>
 </div>
-
-<!-- FOOTER -->
 <footer class="site-footer">
   <div class="fgrid">
     <div>
@@ -589,13 +542,7 @@
   <button class="fbtn fbtn-wa" id="wa-btn" type="button">💬</button>
   <button class="fbtn fbtn-ph" id="ph-btn" type="button">📞</button>
 </div>
-
-<!-- ─────────────────────────────────────────────────────────────
-     SCRIPTS  —  type="module" required for ES import statements
-───────────────────────────────────────────────────────────── -->
 <script type="module">
-
-  /* ── Firebase ── */
   import { initializeApp }
     from 'https://www.gstatic.com/firebasejs/12.11.0/firebase-app.js';
   import { getAuth, onAuthStateChanged, signOut }
@@ -640,8 +587,6 @@
     loginBtn.classList.remove('hidden');
     try { localStorage.removeItem(LS_KEY); } catch(_) {}
   }
-
-  /* Instant render from localStorage — no flicker on page load */
   (function() {
     try {
       const cached = localStorage.getItem(LS_KEY);
@@ -667,14 +612,11 @@
     }
   });
 
-  /* ── Button wiring ── */
   document.getElementById('nav-login-btn').addEventListener('click', () => { window.location.href = 'index.html'; });
   document.getElementById('enroll-btn').addEventListener('click',    () => { document.getElementById('enquiry-form').scrollIntoView({ behavior: 'smooth' }); });
   document.getElementById('btn-directions').addEventListener('click', () => { window.open('https://maps.google.com/?q=Naresh+i+Technologies+Ameerpet+Hyderabad', '_blank'); });
   document.getElementById('wa-btn').addEventListener('click',  () => { window.open('https://wa.me/+918179191999', '_blank'); });
   document.getElementById('ph-btn').addEventListener('click',  () => { window.location.href = 'tel:+918179191999'; });
-
-  /* ── MODE TOGGLE ── */
   let selectedMode = 'Online';
   document.querySelectorAll('.mode-btn').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -684,7 +626,6 @@
     });
   });
 
-  /* ── LIVE OFFICE STATUS ── */
   (function updateStatus() {
     const now  = new Date();
     const day  = now.getDay();
@@ -702,7 +643,6 @@
     badge(document.getElementById('status-sat'),     satOpen);
   })();
 
-  /* ── FORM VALIDATION ── */
   function validate() {
     let ok = true;
 
@@ -720,7 +660,6 @@
     return ok;
   }
 
-  /* Clear error on input */
   ['inp-name','inp-phone','inp-email','inp-course','inp-msg'].forEach(id => {
     const el = document.getElementById(id);
     if (!el) return;
@@ -731,7 +670,6 @@
     });
   });
 
-  /* ── FORM SUBMIT ── */
   document.getElementById('contact-form').addEventListener('submit', async function(e) {
     e.preventDefault();
     if (!validate()) return;
@@ -750,7 +688,6 @@
     txt.textContent = 'Send My Enquiry ✦';
   });
 
-  /* Reset form */
   function resetForm() {
     document.getElementById('contact-form').reset();
     document.getElementById('contact-form').style.display = 'block';
@@ -760,7 +697,6 @@
   }
   document.getElementById('btn-again').addEventListener('click', resetForm);
 
-  /* ── FAQ ── */
   const FAQS = [
     { q:'What is the batch size at NareshIT?', a:'NareshIT maintains small batch sizes of 20–30 students to ensure every student receives personalized attention from the trainer. This deliberate approach is one reason our placement rates are consistently high.' },
     { q:'Are courses available online and offline?', a:'Yes. All courses are available in three modes: Online (live interactive sessions with recording access), Offline at our Ameerpet centre, and Hybrid. You can switch between modes if your circumstances change.' },
@@ -794,7 +730,6 @@
     if (!isOpen) item.classList.add('open');
   });
 
-  /* ── Scroll reveal ── */
   const revealEls = document.querySelectorAll('.info-card,.stats-band,.map-card');
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => {

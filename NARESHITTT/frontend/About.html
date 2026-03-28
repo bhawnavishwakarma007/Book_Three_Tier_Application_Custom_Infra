@@ -25,9 +25,6 @@
     ::-webkit-scrollbar-track{background:transparent;}
     ::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px;}
 
-    /* ════════════════════════════════════
-       NAV
-    ════════════════════════════════════ */
     .nav{
       position:fixed;top:0;left:0;right:0;z-index:900;
       height:68px;display:flex;align-items:center;justify-content:space-between;
@@ -46,8 +43,6 @@
     .nav-links a:hover{color:var(--ink)!important;}
     .nav-links a.active{color:var(--ink)!important;}
     .nav-end{display:flex;gap:10px;align-items:center;}
-
-    /* ── NAV USER PROFILE ── */
     .nav-user{display:none;align-items:center;gap:10px;}
     .nav-user.show{display:flex;}
     .nav-user-avatar{
@@ -60,7 +55,6 @@
     .nav-user-info{display:flex;flex-direction:column;line-height:1.2;}
     .nav-user-name{font-size:12px;font-weight:600;}
     .nav-user-email{font-size:10px;color:var(--ash);}
-    /* Adapt text color to nav state */
     .nav:not(.scrolled) .nav-user-name{color:rgba(246,243,237,.85);}
     .nav.scrolled .nav-user-name{color:var(--ink);}
     .nav-signout{
@@ -79,10 +73,6 @@
     .btn-ng:hover{border-color:var(--ink)!important;color:var(--ink)!important;}
     .btn-nf{padding:8px 20px;background:var(--gold);border:1.5px solid var(--gold);border-radius:100px;font-family:var(--font-sans);font-size:11px;font-weight:700;color:var(--white);cursor:pointer;transition:all .35s var(--ease-silk);letter-spacing:.5px;}
     .btn-nf:hover{background:var(--ink);border-color:var(--ink);}
-
-    /* ════════════════════════════════════
-       CINEMATIC HERO
-    ════════════════════════════════════ */
     .hero{
       height:100vh;min-height:700px;
       background:var(--ink);
@@ -174,9 +164,6 @@
     .scroll-line::after{content:'';position:absolute;inset:0;background:var(--gold);transform:translateX(-101%);animation:scanLine 2s 1.5s infinite;}
     @keyframes scanLine{0%{transform:translateX(-101%)}50%{transform:translateX(0)}100%{transform:translateX(101%)}}
 
-    /* ════════════════════════════════════
-       STATS MARQUEE
-    ════════════════════════════════════ */
     .stats-marquee{background:var(--gold);padding:0;overflow:hidden;}
     .marquee-track{display:flex;animation:marquee 18s linear infinite;width:max-content;padding:18px 0;}
     @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
@@ -184,10 +171,6 @@
     .marquee-num{font-family:var(--font-serif);font-size:24px;font-weight:700;color:var(--white);}
     .marquee-lbl{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.7);}
     .marquee-sep{width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.4);margin:0 8px;}
-
-    /* ════════════════════════════════════
-       FOUNDER
-    ════════════════════════════════════ */
     .founder-section{padding:120px 60px;max-width:1280px;margin:0 auto;}
     .founder-grid{display:grid;grid-template-columns:5fr 6fr;gap:100px;align-items:center;}
     .founder-visual{position:relative;}
@@ -227,10 +210,6 @@
     .fn-role{font-size:11px;color:var(--ash);font-weight:400;letter-spacing:.5px;}
     .founder-text p{font-size:15px;color:var(--ash);line-height:1.9;margin-bottom:16px;}
     .founder-text p strong{color:var(--ink);font-weight:600;}
-
-    /* ════════════════════════════════════
-       COUNTER BAND
-    ════════════════════════════════════ */
     .counter-band{background:var(--ink);padding:72px 60px;position:relative;overflow:hidden;}
     .counter-band::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 100% at 100% 0%,rgba(184,144,80,.1),transparent);}
     .counter-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative;z-index:1;}
@@ -240,10 +219,6 @@
     .counter-num .val{display:inline-block;}
     .counter-num .suf{font-size:.6em;color:var(--gold);}
     .counter-lbl{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(246,243,237,.3);margin-top:8px;}
-
-    /* ════════════════════════════════════
-       TIMELINE
-    ════════════════════════════════════ */
     .timeline-section{padding:120px 60px;max-width:1280px;margin:0 auto;}
     .section-hd{margin-bottom:72px;}
     .section-hd .eyebrow{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
@@ -284,10 +259,6 @@
     .tl-card li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--gold);}
     .tl-card li strong{color:var(--ink);font-weight:600;}
     .tl-spacer{}
-
-    /* ════════════════════════════════════
-       THREE PILLARS
-    ════════════════════════════════════ */
     .pillars-section{background:var(--ink);padding:120px 60px;position:relative;overflow:hidden;}
     .pillars-section::before{content:'';position:absolute;inset:0;
       background:
@@ -308,10 +279,6 @@
     .pcard h3{font-family:var(--font-serif);font-size:24px;font-weight:600;color:rgba(246,243,237,.9);margin-bottom:14px;line-height:1.2;position:relative;z-index:1;}
     .pcard p{font-size:13px;color:rgba(246,243,237,.42);line-height:1.85;position:relative;z-index:1;}
     .pcard-divider{position:absolute;top:0;right:0;bottom:0;width:1px;background:rgba(246,243,237,.06);}
-
-    /* ════════════════════════════════════
-       INFRA — BENTO GRID
-    ════════════════════════════════════ */
     .infra-section{padding:120px 60px;max-width:1280px;margin:0 auto;}
     .bento{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:200px;gap:16px;}
     .bento-card{background:var(--white);border:1px solid var(--divider);border-radius:20px;padding:32px;overflow:hidden;position:relative;transition:transform .4s var(--ease-silk),box-shadow .4s,border-color .3s;opacity:0;transform:translateY(24px);}
@@ -332,10 +299,6 @@
     .bento-stat{display:flex;flex-direction:column;justify-content:flex-end;}
     .bento-big-num{font-family:var(--font-serif);font-size:72px;font-weight:300;color:rgba(246,243,237,.9);line-height:1;letter-spacing:-2px;margin-bottom:6px;}
     .bento-big-lbl{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(246,243,237,.3);}
-
-    /* ════════════════════════════════════
-       CTA
-    ════════════════════════════════════ */
     .cta-section{padding:0 60px 120px;max-width:1280px;margin:0 auto;}
     .cta-block{background:var(--ink);border-radius:24px;padding:72px 72px;position:relative;overflow:hidden;display:flex;justify-content:space-between;align-items:center;gap:40px;flex-wrap:wrap;}
     .cta-block::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 100% at 100% 50%,rgba(184,144,80,.15),transparent),radial-gradient(ellipse 30% 60% at 0% 0%,rgba(184,144,80,.08),transparent);}
@@ -350,10 +313,6 @@
     .cta-p:hover{background:var(--white);color:var(--ink);transform:translateY(-2px);box-shadow:0 8px 24px rgba(255,255,255,.15);}
     .cta-g{padding:14px 36px;background:transparent;border:1.5px solid rgba(246,243,237,.2);border-radius:100px;font-family:var(--font-sans);font-size:13px;font-weight:600;color:rgba(246,243,237,.7);cursor:pointer;letter-spacing:.5px;transition:all .4s;}
     .cta-g:hover{border-color:rgba(246,243,237,.5);color:var(--white);}
-
-    /* ════════════════════════════════════
-       FOOTER
-    ════════════════════════════════════ */
     .site-footer{background:var(--ink);padding:60px 60px 36px;border-top:1px solid rgba(255,255,255,.05);}
     .fgrid{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:52px;max-width:1280px;margin:0 auto 48px;}
     .flogo img{height:34px;filter:brightness(0) invert(1);opacity:.8;margin-bottom:16px;}
@@ -372,10 +331,6 @@
     .fbtn:hover{transform:scale(1.12);}
     .fbtn-wa{background:#25D366;color:#fff;}
     .fbtn-ph{background:var(--gold);color:#fff;}
-
-    /* ════════════════════════════════════
-       RESPONSIVE
-    ════════════════════════════════════ */
     @media(max-width:1100px){
       .founder-grid{grid-template-columns:1fr;gap:60px;}
       .fv-bg{aspect-ratio:16/9;}
@@ -410,8 +365,6 @@
   </style>
 </head>
 <body>
-
-<!-- NAV -->
 <nav class="nav" id="nav">
   <a href="index.html" class="nav-logo"><img src="https://cdn.nareshit.com/images/naresh-it-logo2.png" alt="NareshIT"></a>
   <ul class="nav-links">
@@ -423,7 +376,6 @@
     <li><a href="contact.html">Contact</a></li>
   </ul>
   <div class="nav-end">
-    <!-- Logged-in profile pill -->
     <div class="nav-user" id="nav-user">
       <div class="nav-user-avatar" id="nav-user-avatar">?</div>
       <div class="nav-user-info">
@@ -432,13 +384,10 @@
       </div>
       <button class="nav-signout" id="nav-signout">Sign out</button>
     </div>
-    <!-- Logged-out buttons -->
     <button class="btn-ng" id="nav-login-btn" type="button">Login</button>
     <button class="btn-nf" id="enroll-btn" type="button">Enroll Now</button>
   </div>
 </nav>
-
-<!-- CINEMATIC HERO -->
 <div class="hero">
   <div class="hero-grid"></div>
   <div class="hero-glow"></div>
@@ -471,13 +420,9 @@
     <span>Scroll to explore</span>
   </div>
 </div>
-
-<!-- STATS MARQUEE -->
 <div class="stats-marquee">
   <div class="marquee-track" id="marquee"></div>
 </div>
-
-<!-- FOUNDER -->
 <div class="founder-section" id="founder">
   <div class="founder-grid">
     <div class="founder-visual">
@@ -513,8 +458,6 @@
     </div>
   </div>
 </div>
-
-<!-- COUNTER BAND -->
 <div class="counter-band">
   <div class="counter-inner">
     <div class="counter-item">
@@ -539,8 +482,6 @@
     </div>
   </div>
 </div>
-
-<!-- TIMELINE -->
 <div class="timeline-section">
   <div class="section-hd">
     <div class="eyebrow">Our Story</div>
@@ -615,8 +556,6 @@
 
   </div>
 </div>
-
-<!-- PILLARS -->
 <div class="pillars-section">
   <div class="pillars-inner">
     <div class="pillars-hd section-hd">
@@ -648,8 +587,6 @@
     </div>
   </div>
 </div>
-
-<!-- INFRA BENTO -->
 <div class="infra-section">
   <div class="section-hd">
     <div class="eyebrow">Scale &amp; Capability</div>
@@ -705,8 +642,6 @@
     </div>
   </div>
 </div>
-
-<!-- CTA -->
 <div class="cta-section">
   <div class="cta-block">
     <div class="cta-glyph">NIT</div>
@@ -721,8 +656,6 @@
     </div>
   </div>
 </div>
-
-<!-- FOOTER -->
 <footer class="site-footer">
   <div class="fgrid">
     <div>
@@ -746,13 +679,7 @@
   <button class="fbtn fbtn-wa" id="wa-btn">💬</button>
   <button class="fbtn fbtn-ph" id="ph-btn">📞</button>
 </div>
-
-<!-- ─────────────────────────────────────────────────────────────
-     SCRIPTS  —  type="module" required for ES import statements
-───────────────────────────────────────────────────────────── -->
 <script type="module">
-
-  /* ── Firebase ── */
   import { initializeApp }
     from 'https://www.gstatic.com/firebasejs/12.11.0/firebase-app.js';
   import { getAuth, onAuthStateChanged, signOut }
@@ -798,7 +725,6 @@
     try { localStorage.removeItem(LS_KEY); } catch(_) {}
   }
 
-  /* Instant render from localStorage — no flicker on page load */
   (function() {
     try {
       const cached = localStorage.getItem(LS_KEY);
@@ -823,8 +749,6 @@
       hideNavProfile();
     }
   });
-
-  /* ── Button wiring (replaces all inline onclick) ── */
   document.getElementById('nav-login-btn').addEventListener('click', () => { window.location.href = 'index.html'; });
   document.getElementById('enroll-btn').addEventListener('click',    () => { window.location.href = 'contact.html'; });
   document.getElementById('hero-courses-btn').addEventListener('click', () => { window.location.href = 'courses.html'; });
@@ -833,14 +757,10 @@
   document.getElementById('cta-counsel-btn').addEventListener('click',  () => { window.location.href = 'contact.html'; });
   document.getElementById('wa-btn').addEventListener('click', () => { window.open('https://wa.me/+918179191999', '_blank'); });
   document.getElementById('ph-btn').addEventListener('click', () => { window.location.href = 'tel:+918179191999'; });
-
-  /* ── NAV SCROLL ── */
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 80);
   }, { passive:true });
-
-  /* ── MARQUEE DATA ── */
   const items = [
     ['22+', 'Years of Excellence'], ['10L+', 'Students Trained'],
     ['2801+', 'Placements'], ['1800+', 'Colleges'],
@@ -854,8 +774,6 @@
     `<div class="marquee-item"><span class="marquee-num">${n}</span><span class="marquee-sep"></span><span class="marquee-lbl">${l}</span><span class="marquee-sep"></span></div>`
   ).join('');
   track.innerHTML = html + html;
-
-  /* ── ANIMATED COUNTERS ── */
   function animateCounter(el) {
     const target = +el.dataset.target;
     const dur    = 2000;
@@ -879,7 +797,6 @@
   const counterBand = document.querySelector('.counter-band');
   if (counterBand) counterObs.observe(counterBand);
 
-  /* ── SCROLL REVEAL ── */
   const revObs = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting) { e.target.classList.add('visible'); revObs.unobserve(e.target); }
@@ -889,8 +806,6 @@
     el.style.transitionDelay = (i * 0.06) + 's';
     revObs.observe(el);
   });
-
-  /* ── TIMELINE FILL ── */
   const tlFill = document.getElementById('tl-fill');
   const tlEl   = document.getElementById('timeline');
   if (tlFill && tlEl) {
@@ -908,8 +823,6 @@
       });
     }, { passive:true });
   }
-
-  /* ── PARALLAX on hero rings ── */
   window.addEventListener('scroll', () => {
     const y = window.scrollY;
     const geo = document.querySelector('.hero-geo');

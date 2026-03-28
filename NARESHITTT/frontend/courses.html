@@ -42,7 +42,6 @@
     ::-webkit-scrollbar-track  { background:var(--cream-dark); }
     ::-webkit-scrollbar-thumb  { background:var(--gold); border-radius:4px; }
 
-    /* ── NAV ── */
     .nav {
       position:sticky; top:0; z-index:400;
       height:68px; display:flex; align-items:center; justify-content:space-between;
@@ -66,7 +65,6 @@
     .nav-links a:hover::after,.nav-links a.active::after { transform:scaleX(1); }
     .nav-end { display:flex; gap:10px; align-items:center; }
 
-    /* ── NAV USER PROFILE ── */
     .nav-user { display:none; align-items:center; gap:10px; }
     .nav-user.show { display:flex; }
     .nav-user-avatar {
@@ -103,7 +101,6 @@
     }
     .btn-nf:hover { background:var(--ink); border-color:var(--ink); }
 
-    /* ── PAGE HERO ── */
     .page-hero {
       background:var(--ink);
       padding:64px 60px 56px;
@@ -156,7 +153,6 @@
     }
     .chip strong { color:var(--gold-light); font-weight:600; }
 
-    /* ── AI SUGGESTION WIDGET ── */
     .ai-suggest-box {
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(184,144,80,0.3);
@@ -250,7 +246,6 @@
     .ai-enroll-all { margin-top: 14px; width: 100%; padding: 11px; background: transparent; border: 1px solid rgba(184,144,80,0.35); border-radius: var(--r-sm); font-family: var(--font-sans); font-size: 12px; font-weight: 500; letter-spacing: 0.5px; color: var(--gold-light); cursor: pointer; transition: all 0.3s var(--ease-silk); }
     .ai-enroll-all:hover { background: rgba(184,144,80,0.1); border-color: var(--gold-light); }
 
-    /* ── MAIN LAYOUT ── */
     .page-body { max-width:1200px; margin:0 auto; padding:48px 60px 100px; display:flex; gap:32px; align-items:flex-start; }
     .sidebar { width:220px; flex-shrink:0; position:sticky; top:88px; }
     .sidebar-title { font-size:9px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--ash); margin-bottom:12px; padding-left:4px; }
@@ -294,7 +289,6 @@
     .fbtn-wa { background:#25D366; color:#fff; }
     .fbtn-ph { background:var(--gold); color:#fff; }
 
-    /* ── ENROLL MODAL ── */
     .modal-overlay { position:fixed; inset:0; background:rgba(17,16,16,.5); backdrop-filter:blur(6px); z-index:500; display:none; align-items:center; justify-content:center; padding:20px; }
     .modal-overlay.open { display:flex; }
     .modal-box { background:var(--white); border-radius:var(--r-lg); width:100%; max-width:480px; padding:44px; position:relative; animation:modalIn .45s var(--ease-silk); }
@@ -311,7 +305,6 @@
     .btn-submit-modal { width:100%; padding:14px; background:var(--ink); color:var(--white); border:none; border-radius:var(--r-sm); margin-top:8px; font-family:var(--font-serif); font-size:17px; font-weight:600; cursor:pointer; transition:all .4s var(--ease-silk); }
     .btn-submit-modal:hover { background:var(--gold); }
 
-    /* ── FOOTER ── */
     .site-footer { background:var(--ink); padding:64px 60px 36px; }
     .fgrid { display:grid; grid-template-columns:1.8fr 1fr 1fr 1fr; gap:56px; max-width:1200px; margin:0 auto 52px; }
     .flogo img { height:36px; filter:brightness(0) invert(1); opacity:.85; margin-bottom:16px; }
@@ -326,7 +319,6 @@
     .fbot { max-width:1200px; margin:0 auto; border-top:1px solid rgba(246,243,237,.07); padding-top:24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; }
     .fbot p { font-size:12px; color:rgba(246,243,237,.25); }
 
-    /* ── RESPONSIVE ── */
     @media(max-width:1024px) {
       .nav { padding:0 28px; }
       .nav-links { display:none; }
@@ -355,7 +347,6 @@
 </head>
 <body>
 
-  <!-- NAV -->
   <nav class="nav" role="navigation">
     <a href="index.html" class="nav-logo"><img src="https://cdn.nareshit.com/images/naresh-it-logo2.png" alt="NareshIT" /></a>
     <ul class="nav-links">
@@ -365,7 +356,6 @@
       <li><a href="contact.html">Contact</a></li>
     </ul>
     <div class="nav-end">
-      <!-- Logged-in profile pill -->
       <div class="nav-user" id="nav-user">
         <div class="nav-user-avatar" id="nav-user-avatar">?</div>
         <div class="nav-user-info">
@@ -374,13 +364,11 @@
         </div>
         <button class="nav-signout" id="nav-signout">Sign out</button>
       </div>
-      <!-- Logged-out buttons -->
       <button class="btn-ng" id="nav-login-btn" type="button">Login</button>
       <button class="btn-nf" id="nav-enroll-btn" type="button">Enroll Now</button>
     </div>
   </nav>
 
-  <!-- PAGE HERO -->
   <section class="page-hero">
     <div class="page-hero-inner">
       <div class="hero-left">
@@ -400,7 +388,6 @@
         </div>
       </div>
 
-      <!-- AI Suggestion Widget -->
       <div class="hero-right">
         <div class="ai-suggest-box">
           <div class="ai-box-header">
@@ -506,7 +493,6 @@
     </div>
   </section>
 
-  <!-- BODY -->
   <div class="page-body">
     <aside class="sidebar">
       <div class="sidebar-title">Browse by Category</div>
@@ -530,7 +516,6 @@
     </div>
   </div>
 
-  <!-- ENROLL MODAL -->
   <div class="modal-overlay" id="enroll-modal">
     <div class="modal-box">
       <button class="modal-close" id="modal-close" type="button">✕</button>
@@ -556,7 +541,6 @@
     </div>
   </div>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="fgrid">
       <div>
@@ -581,12 +565,8 @@
     <button class="fbtn fbtn-ph" id="ph-btn" aria-label="Call">📞</button>
   </div>
 
-  <!-- ─────────────────────────────────────────────────────────────
-       SCRIPTS  —  type="module" required for ES import statements
-  ───────────────────────────────────────────────────────────── -->
   <script type="module">
 
-    /* ── Firebase ── */
     import { initializeApp }
       from 'https://www.gstatic.com/firebasejs/12.11.0/firebase-app.js';
     import { getAuth, onAuthStateChanged, signOut }
@@ -632,7 +612,6 @@
       try { localStorage.removeItem(LS_KEY); } catch(_) {}
     }
 
-    /* Instant render from localStorage — no flicker on page load */
     (function() {
       try {
         const cached = localStorage.getItem(LS_KEY);
@@ -658,15 +637,12 @@
       }
     });
 
-    /* ── Nav button wiring ── */
     document.getElementById('nav-login-btn').addEventListener('click',  () => { window.location.href = 'index.html'; });
     document.getElementById('nav-enroll-btn').addEventListener('click', () => { openModal('General Enquiry'); });
     document.getElementById('wa-btn').addEventListener('click', () => { window.open('https://wa.me/+918179191999', '_blank'); });
     document.getElementById('ph-btn').addEventListener('click', () => { window.location.href = 'tel:+918179191999'; });
 
-    /* ─────────────────────────────────────────
-       COURSE DATA
-    ───────────────────────────────────────── */
+    
     const CATEGORIES = [
       { id:'all',          label:'All Courses' },
       { id:'trending',     label:'Trending' },
@@ -774,9 +750,7 @@
       { name:'iOS (iPhone OS)',      icon:'📱', rating:5.0, start:'23 Mar 2026', dur:'3 months', trainer:'Expert', badge:'', cats:['mobile'] },
     ];
 
-    /* ─────────────────────────────────────────
-       AI SUGGESTION LOGIC
-    ───────────────────────────────────────── */
+    
     const AI_RULES = {
       fullstack: {
         beginner:     [ { name:'Full Stack Java', reason:'Best end-to-end track for beginners aiming at high-paying roles', match:'97%' }, { name:'HTML CSS JavaScript', reason:'Essential foundation before any full-stack journey', match:'95%' }, { name:'Full Stack Python', reason:'Python-based stack with strong industry demand', match:'92%' } ],
@@ -849,7 +823,6 @@
       return ALL_COURSES.find(c => c.name === name);
     }
 
-    /* AI widget interactions */
     const thinkingMessages = ['Analysing your education profile…','Matching your skills to industry demand…','Calculating best-fit courses for you…','Almost there — personalising results…'];
 
     document.getElementById('btn-ai-go').addEventListener('click', function() {
@@ -905,7 +878,6 @@
             </div>`;
         }).join('');
 
-        /* Delegate clicks on rec cards */
         recsContainer.querySelectorAll('.ai-rec-card').forEach(card => {
           card.addEventListener('click', () => openModal(card.dataset.course));
         });
@@ -932,9 +904,6 @@
       openModal('AI-Recommended Courses');
     });
 
-    /* ─────────────────────────────────────────
-       COURSES RENDER
-    ───────────────────────────────────────── */
     let currentCat  = 'all';
     let currentSort = 'default';
     let searchQuery = '';
@@ -1005,7 +974,6 @@
             </div>
           `).join('');
 
-          /* Delegate enroll clicks — no inline onclick needed */
           grid.querySelectorAll('.btn-enroll').forEach(btn => {
             btn.addEventListener('click', e => {
               e.stopPropagation();
@@ -1070,7 +1038,6 @@
     document.getElementById('search-btn').addEventListener('click', doSearch);
     document.getElementById('search-input').addEventListener('keydown', e => { if (e.key === 'Enter') doSearch(); });
 
-    /* Read URL params */
     (function() {
       const params = new URLSearchParams(window.location.search);
       const cat = params.get('cat');

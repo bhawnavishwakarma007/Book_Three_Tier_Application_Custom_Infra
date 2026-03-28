@@ -25,7 +25,7 @@
     img{display:block;max-width:100%;}
     ::-webkit-scrollbar{width:3px;}::-webkit-scrollbar-track{background:transparent;}::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px;}
 
-    /* ── NAV ── */
+
     .nav{position:sticky;top:0;z-index:500;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 60px;background:rgba(246,243,237,.96);backdrop-filter:blur(24px);box-shadow:0 1px 0 var(--divider);}
     .nav-logo img{height:38px;}
     .nav-links{display:flex;gap:36px;list-style:none;align-items:center;}
@@ -35,7 +35,6 @@
     .nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1);}
     .nav-end{display:flex;gap:10px;align-items:center;}
 
-    /* ── NAV USER PROFILE ── */
     .nav-user{
       display:none;align-items:center;gap:10px;
       padding:5px 14px 5px 6px;
@@ -70,7 +69,6 @@
     .btn-nf{padding:9px 22px;background:var(--gold);border:1.5px solid var(--gold);border-radius:var(--r-pill);font-family:var(--font-sans);font-size:11px;font-weight:700;color:var(--white);cursor:pointer;transition:all .35s var(--ease-silk);}
     .btn-nf:hover{background:var(--ink);border-color:var(--ink);}
 
-    /* ── HERO ── */
     .hero{background:var(--ink);padding:96px 60px 88px;position:relative;overflow:hidden;}
     .hero::before{content:'';position:absolute;inset:0;pointer-events:none;
       background:
@@ -90,7 +88,6 @@
     .hero-pill{padding:8px 20px;border:1px solid rgba(246,243,237,.15);border-radius:var(--r-pill);font-size:11px;font-weight:600;color:rgba(246,243,237,.55);letter-spacing:.3px;cursor:pointer;transition:all .3s;}
     .hero-pill:hover,.hero-pill.active{background:rgba(184,144,80,.15);border-color:rgba(184,144,80,.35);color:var(--gold-light);}
 
-    /* ── NEWS TICKER ── */
     .ticker{background:var(--gold);overflow:hidden;padding:0;}
     .ticker-track{display:flex;width:max-content;animation:tickscroll 28s linear infinite;padding:14px 0;}
     .ticker-track:hover{animation-play-state:paused;}
@@ -98,11 +95,11 @@
     .ticker-item{display:flex;align-items:center;gap:10px;padding:0 36px;white-space:nowrap;font-size:12px;font-weight:600;color:rgba(255,255,255,.92);letter-spacing:.2px;}
     .ticker-sep{width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.4);}
 
-    /* ── LAYOUT ── */
+
     .page-wrap{max-width:1280px;margin:0 auto;padding:72px 60px 100px;}
     .main-grid{display:grid;grid-template-columns:1fr 320px;gap:56px;align-items:start;}
 
-    /* ── FILTER + SEARCH ── */
+
     .toolbar{display:flex;align-items:center;gap:12px;margin-bottom:36px;flex-wrap:wrap;}
     .filter-pills{display:flex;gap:8px;flex-wrap:wrap;flex:1;}
     .fpill{padding:7px 18px;background:var(--white);border:1.5px solid var(--divider);border-radius:var(--r-pill);font-family:var(--font-sans);font-size:11px;font-weight:600;color:var(--ash);cursor:pointer;transition:all .25s var(--ease-silk);white-space:nowrap;}
@@ -114,7 +111,6 @@
     .search-inp::placeholder{color:var(--ash);}
     .search-inp:focus{border-color:var(--gold);width:240px;box-shadow:0 0 0 3px rgba(184,144,80,.1);}
 
-    /* ── FEATURED ── */
     .featured{background:var(--white);border:1px solid var(--divider);border-radius:20px;overflow:hidden;margin-bottom:40px;display:grid;grid-template-columns:1.2fr 1fr;gap:0;box-shadow:0 4px 24px rgba(17,16,16,.06);cursor:pointer;transition:transform .4s var(--ease-silk),box-shadow .4s;}
     .featured:hover{transform:translateY(-5px);box-shadow:0 24px 64px rgba(17,16,16,.11);}
     .feat-img{position:relative;overflow:hidden;min-height:320px;}
@@ -135,12 +131,11 @@
     .read-btn-arr{transition:transform .3s var(--ease-silk);}
     .featured:hover .read-btn-arr{transform:translateX(5px);}
 
-    /* ── RESULTS BAR ── */
     .results-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;flex-wrap:wrap;gap:10px;}
     .results-label{font-family:var(--font-serif);font-size:22px;font-weight:600;color:var(--ink);}
     .results-count{font-size:12px;color:var(--ash);}
 
-    /* ── NEWS CARDS GRID ── */
+
     #cards-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;transition:opacity .3s var(--ease-std),transform .3s;}
     #cards-grid.fading{opacity:0;transform:translateY(10px);}
 
@@ -166,7 +161,6 @@
     .empty-ico{font-size:52px;opacity:.3;margin-bottom:14px;}
     .empty h3{font-family:var(--font-serif);font-size:24px;color:var(--ash);}
 
-    /* ── SIDEBAR ── */
     .sidebar{position:sticky;top:88px;display:flex;flex-direction:column;gap:20px;}
     .sw{background:var(--white);border:1px solid var(--divider);border-radius:var(--r-lg);overflow:hidden;box-shadow:0 2px 16px rgba(17,16,16,.05);}
     .sw-hd{background:var(--ink);padding:18px 22px;position:relative;overflow:hidden;}
@@ -193,14 +187,12 @@
     .enroll-btn{display:block;padding:11px 24px;background:var(--ink);border-radius:var(--r-pill);font-family:var(--font-sans);font-size:12px;font-weight:700;color:var(--white);cursor:pointer;transition:all .3s;position:relative;z-index:1;}
     .enroll-btn:hover{background:var(--white);color:var(--ink);}
 
-    /* ── PAGINATION ── */
     .pagination{display:flex;gap:8px;margin-top:40px;justify-content:center;flex-wrap:wrap;}
     .pg-btn{width:38px;height:38px;border-radius:var(--r-sm);border:1.5px solid var(--divider);background:var(--white);font-family:var(--font-sans);font-size:13px;font-weight:600;color:var(--ash);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .25s var(--ease-silk);}
     .pg-btn:hover{border-color:var(--ink);color:var(--ink);}
     .pg-btn.active{background:var(--ink);border-color:var(--ink);color:var(--white);}
     .pg-btn.arrow{font-size:16px;}
 
-    /* ── ARTICLE MODAL ── */
     .art-overlay{position:fixed;inset:0;z-index:900;background:rgba(14,13,12,.7);backdrop-filter:blur(12px);display:flex;align-items:flex-start;justify-content:center;padding:28px 20px;overflow-y:auto;opacity:0;pointer-events:none;transition:opacity .35s var(--ease-std);}
     .art-overlay.open{opacity:1;pointer-events:all;}
     .art-modal{background:var(--white);border-radius:20px;width:100%;max-width:860px;margin:auto;transform:translateY(28px) scale(.97);transition:transform .4s var(--ease-silk);box-shadow:0 48px 120px rgba(14,13,12,.3);overflow:hidden;}
@@ -229,7 +221,6 @@
     .art-cta-btn{padding:10px 24px;background:var(--gold);color:var(--white);border:none;border-radius:var(--r-pill);font-family:var(--font-sans);font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:all .3s;}
     .art-cta-btn:hover{background:var(--white);color:var(--ink);}
 
-    /* ── FOOTER ── */
     .site-footer{background:var(--ink);padding:60px 60px 36px;}
     .fgrid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.6fr;gap:52px;max-width:1280px;margin:0 auto 48px;}
     .flogo img{height:34px;filter:brightness(0) invert(1);opacity:.8;margin-bottom:16px;}
@@ -281,7 +272,6 @@
 </head>
 <body>
 
-<!-- NAV -->
 <nav class="nav">
   <a href="index.html" class="nav-logo"><img src="https://cdn.nareshit.com/images/naresh-it-logo2.png" alt="NareshIT"></a>
   <ul class="nav-links">
@@ -293,7 +283,6 @@
     <li><a href="contact.html">Contact</a></li>
   </ul>
   <div class="nav-end">
-    <!-- Logged-in profile pill -->
     <div class="nav-user" id="nav-user">
       <div class="nav-user-avatar" id="nav-user-avatar">?</div>
       <div class="nav-user-info">
@@ -302,12 +291,10 @@
       </div>
       <button class="nav-signout" id="nav-signout" title="Sign out">✕</button>
     </div>
-    <!-- Logged-out login button -->
     <button class="btn-ng" id="nav-login-btn" onclick="window.location.href='index.html'">Login</button>
   </div>
 </nav>
 
-<!-- HERO -->
 <div class="hero">
   <div class="hero-glyph">N</div>
   <div class="hero-inner">
@@ -318,10 +305,8 @@
   </div>
 </div>
 
-<!-- TICKER -->
 <div class="ticker"><div class="ticker-track" id="ticker"></div></div>
 
-<!-- MAIN -->
 <div class="page-wrap">
   <div class="main-grid">
     <div class="content-col">
@@ -343,7 +328,6 @@
       <div class="pagination" id="pagination"></div>
     </div>
 
-    <!-- SIDEBAR -->
     <div class="sidebar">
       <div class="sw">
         <div class="sw-hd"><h4>Latest Updates</h4><p>What's happening right now</p></div>
@@ -370,7 +354,6 @@
   </div>
 </div>
 
-<!-- ARTICLE MODAL -->
 <div class="art-overlay" id="art-overlay">
   <div class="art-modal">
     <button class="art-close" onclick="closeArt()">✕</button>
@@ -389,7 +372,6 @@
   </div>
 </div>
 
-<!-- FOOTER -->
 <footer class="site-footer">
   <div class="fgrid">
     <div>
@@ -453,9 +435,6 @@
 </div>
 
 <script type="module">
-/* ──────────────────────────────────────────
-   FIREBASE AUTH — Persistent Nav Profile
-────────────────────────────────────────── */
 import { initializeApp }
   from 'https://www.gstatic.com/firebasejs/12.11.0/firebase-app.js';
 import { getAuth, onAuthStateChanged, signOut }
@@ -502,7 +481,6 @@ function hideNavProfile() {
   try { localStorage.removeItem(LS_KEY); } catch(_) {}
 }
 
-/* Instant render from localStorage — no flicker on page load */
 (function() {
   try {
     const cached = localStorage.getItem(LS_KEY);
@@ -513,12 +491,10 @@ function hideNavProfile() {
   } catch(_) {}
 })();
 
-/* Sign-out button */
 document.getElementById('nav-signout').addEventListener('click', () => {
   signOut(auth).then(hideNavProfile).catch(console.error);
 });
 
-/* Firebase auth — authoritative source of truth */
 onAuthStateChanged(auth, user => {
   if (user) {
     showNavProfile(
@@ -530,10 +506,6 @@ onAuthStateChanged(auth, user => {
   }
 });
 
-
-/* ──────────────────────────────────────────
-   NEWS DATA
-────────────────────────────────────────── */
 const NEWS = [
   {
     id:1, cat:'AI & Technology', date:'Mar 2026',
@@ -599,14 +571,12 @@ const NEWS = [
   },
 ];
 
-/* ─────────────── STATE ─────────────── */
 const PER_PAGE = 3;
 const CATS = ['All', ...new Set(NEWS.map(n => n.cat))];
 let currentCat  = 'All';
 let searchQ     = '';
 let currentPage = 1;
 
-/* ─────────────── TICKER ─────────────── */
 (function() {
   const items = NEWS.map(n =>
     `<div class="ticker-item">📰 ${n.title}<span class="ticker-sep"></span></div>`
@@ -614,14 +584,12 @@ let currentPage = 1;
   document.getElementById('ticker').innerHTML = items + items;
 })();
 
-/* ─────────────── HERO PILLS ─────────────── */
 function renderHeroPills() {
   document.getElementById('hero-pills').innerHTML = CATS.map(c =>
     `<div class="hero-pill${currentCat===c?' active':''}" onclick="setCat('${c}')">${c}</div>`
   ).join('');
 }
 
-/* ─────────────── FILTER PILLS ─────────────── */
 function renderFilterPills() {
   document.getElementById('filter-pills').innerHTML = CATS.map(c =>
     `<div class="fpill${currentCat===c?' on':''}" onclick="setCat('${c}')">${c}</div>`
@@ -636,7 +604,6 @@ window.setCat = function(c) {
   renderAll();
 };
 
-/* ─────────────── FILTER ─────────────── */
 function getFiltered() {
   let list = currentCat === 'All' ? [...NEWS] : NEWS.filter(n => n.cat === currentCat);
   if (searchQ) {
@@ -646,7 +613,6 @@ function getFiltered() {
   return list;
 }
 
-/* ─────────────── SIDEBAR ─────────────── */
 function renderSidebar() {
   document.getElementById('sw-list').innerHTML = NEWS.map(n => `
     <div class="sw-item" onclick="openArt(${n.id})">
@@ -659,7 +625,6 @@ function renderSidebar() {
     </div>`).join('');
 }
 
-/* ─────────────── RENDER ALL ─────────────── */
 function renderAll() {
   const list     = getFiltered();
   const total    = list.length;
@@ -738,7 +703,6 @@ window.goPage = function(p) {
   document.querySelector('.content-col').scrollIntoView({behavior:'smooth',block:'start'});
 };
 
-/* ─────────────── ARTICLE MODAL ─────────────── */
 window.openArt = function(id) {
   const art = NEWS.find(n => n.id === id);
   if (!art) return;
@@ -764,7 +728,6 @@ document.getElementById('art-overlay').addEventListener('click', e => {
 });
 document.addEventListener('keydown', e => { if (e.key==='Escape') window.closeArt(); });
 
-/* ─────────────── SEARCH ─────────────── */
 document.getElementById('search-inp').addEventListener('input', e => {
   searchQ     = e.target.value.trim();
   currentPage = 1;
@@ -774,7 +737,6 @@ document.getElementById('search-inp').addEventListener('input', e => {
   renderAll();
 });
 
-/* ─────────────── INIT ─────────────── */
 renderHeroPills();
 renderFilterPills();
 renderSidebar();

@@ -28,7 +28,6 @@
     ::-webkit-scrollbar-track{background:transparent;}
     ::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px;}
 
-    /* ── NAV ── */
     .nav{position:sticky;top:0;z-index:400;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 60px;background:rgba(246,243,237,.96);backdrop-filter:blur(24px);box-shadow:0 1px 0 var(--divider);}
     .nav-logo img{height:38px;}
     .nav-links{display:flex;gap:36px;list-style:none;align-items:center;}
@@ -38,7 +37,6 @@
     .nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1);}
     .nav-end{display:flex;gap:10px;align-items:center;}
 
-    /* ── NAV USER PROFILE ── */
     .nav-user{display:none;align-items:center;gap:10px;}
     .nav-user.show{display:flex;}
     .nav-user-avatar{
@@ -65,7 +63,6 @@
     .btn-nf{padding:9px 22px;background:var(--gold);border:1.5px solid var(--gold);border-radius:var(--r-pill);font-family:var(--font-sans);font-size:11px;font-weight:700;color:var(--white);cursor:pointer;transition:all .35s var(--ease-silk);}
     .btn-nf:hover{background:var(--ink);border-color:var(--ink);}
 
-    /* ── HERO ── */
     .hero{background:var(--ink);padding:96px 60px 88px;position:relative;overflow:hidden;}
     .hero::before{content:'';position:absolute;inset:0;pointer-events:none;
       background:
@@ -87,7 +84,6 @@
     .hs-num em{font-style:italic;color:var(--gold);}
     .hs-lbl{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(246,243,237,.3);margin-top:4px;}
 
-    /* ── FILTER BAR ── */
     .filter-bar{background:var(--white);border-bottom:1px solid var(--divider);position:sticky;top:68px;z-index:300;overflow-x:auto;}
     .filter-bar::-webkit-scrollbar{display:none;}
     .filter-inner{max-width:1280px;margin:0 auto;padding:0 60px;display:flex;align-items:center;gap:0;white-space:nowrap;}
@@ -103,7 +99,6 @@
     }
     .add-btn:hover{background:var(--ink);}
 
-    /* ── MAIN ── */
     .page-wrap{max-width:1280px;margin:0 auto;padding:64px 60px 100px;}
 
     .results-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:36px;flex-wrap:wrap;gap:12px;}
@@ -111,7 +106,6 @@
     .results-count{font-size:12px;color:var(--ash);}
     .sort-sel{padding:8px 14px;background:var(--white);border:1px solid var(--divider);border-radius:var(--r-sm);font-family:var(--font-sans);font-size:12px;color:var(--ash);cursor:pointer;outline:none;appearance:none;-webkit-appearance:none;}
 
-    /* ── TESTIMONIAL GRID ── */
     #t-grid{
       display:grid;
       grid-template-columns:repeat(auto-fill,minmax(360px,1fr));
@@ -175,7 +169,6 @@
     .empty h3{font-family:var(--font-serif);font-size:24px;font-weight:400;color:var(--ash);margin-bottom:8px;}
     .empty p{font-size:13px;color:var(--ash);opacity:.7;}
 
-    /* ── MODAL ── */
     .modal-overlay{position:fixed;inset:0;z-index:800;background:rgba(14,13,12,.65);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .35s var(--ease-std);}
     .modal-overlay.open{opacity:1;pointer-events:all;}
     .modal{background:var(--white);border-radius:20px;width:100%;max-width:560px;max-height:90vh;overflow-y:auto;transform:translateY(24px) scale(.97);transition:transform .4s var(--ease-silk);box-shadow:0 40px 100px rgba(14,13,12,.28);}
@@ -217,7 +210,6 @@
     .ms-close{padding:10px 24px;background:transparent;border:1.5px solid var(--divider);border-radius:var(--r-pill);font-family:var(--font-sans);font-size:12px;font-weight:600;color:var(--ash);cursor:pointer;transition:all .3s;}
     .ms-close:hover{border-color:var(--ink);color:var(--ink);}
 
-    /* ── FOOTER ── */
     .site-footer{background:var(--ink);padding:60px 60px 36px;}
     .fgrid{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:52px;max-width:1280px;margin:0 auto 48px;}
     .flogo img{height:34px;filter:brightness(0) invert(1);opacity:.8;margin-bottom:16px;}
@@ -254,7 +246,7 @@
 </head>
 <body>
 
-<!-- NAV -->
+
 <nav class="nav">
   <a href="index.html" class="nav-logo"><img src="https://cdn.nareshit.com/images/naresh-it-logo2.png" alt="NareshIT"></a>
   <ul class="nav-links">
@@ -265,7 +257,6 @@
     <li><a href="contact.html">Contact</a></li>
   </ul>
   <div class="nav-end">
-    <!-- Logged-in profile pill -->
     <div class="nav-user" id="nav-user">
       <div class="nav-user-avatar" id="nav-user-avatar">?</div>
       <div class="nav-user-info">
@@ -274,12 +265,11 @@
       </div>
       <button class="nav-signout" id="nav-signout">Sign out</button>
     </div>
-    <!-- Logged-out login button -->
+
     <button class="btn-ng" id="nav-login-btn" onclick="window.location.href='index.html'">Login</button>
   </div>
 </nav>
 
-<!-- HERO -->
 <div class="hero">
   <div class="hero-glyph">"</div>
   <div class="hero-inner">
@@ -295,7 +285,6 @@
   </div>
 </div>
 
-<!-- FILTER BAR -->
 <div class="filter-bar">
   <div class="filter-inner" id="filter-inner">
     <!-- rendered by JS -->
@@ -305,7 +294,6 @@
   </div>
 </div>
 
-<!-- MAIN -->
 <div class="page-wrap">
   <div class="results-bar">
     <div>
@@ -320,7 +308,7 @@
   <div id="t-grid"></div>
 </div>
 
-<!-- ADD TESTIMONIAL MODAL -->
+
 <div class="modal-overlay" id="modal-overlay">
   <div class="modal">
 
@@ -415,7 +403,7 @@
   </div>
 </div>
 
-<!-- FOOTER -->
+
 <footer class="site-footer">
   <div class="fgrid">
     <div>
@@ -458,12 +446,8 @@
   <button class="fbtn fbtn-ph" onclick="window.location.href='tel:+918179191999'">📞</button>
 </div>
 
-<!-- ─────────────────────────────────────────────────────────────────
-     SCRIPTS  —  type="module" is REQUIRED for ES import statements
-───────────────────────────────────────────────────────────────── -->
 <script type="module">
 
-/* ── Firebase ── */
 import { initializeApp }
   from 'https://www.gstatic.com/firebasejs/12.11.0/firebase-app.js';
 import { getAuth, onAuthStateChanged, signOut }
@@ -510,7 +494,6 @@ function hideNavProfile() {
   try { localStorage.removeItem(LS_KEY); } catch(_) {}
 }
 
-/* Instant render from localStorage — no flicker on page load */
 (function() {
   try {
     const cached = localStorage.getItem(LS_KEY);
@@ -521,12 +504,10 @@ function hideNavProfile() {
   } catch(_) {}
 })();
 
-/* Sign-out button */
 document.getElementById('nav-signout').addEventListener('click', () => {
   signOut(auth).then(hideNavProfile).catch(console.error);
 });
 
-/* Firebase auth — authoritative source of truth */
 onAuthStateChanged(auth, user => {
   if (user) {
     showNavProfile(
@@ -538,9 +519,6 @@ onAuthStateChanged(auth, user => {
   }
 });
 
-/* ─────────────────────────────────────────
-   TESTIMONIAL DATA
-───────────────────────────────────────── */
 const TESTIMONIALS = [
   {
     name:'KS KR',
@@ -644,19 +622,13 @@ const TESTIMONIALS = [
   },
 ];
 
-/* ── User-added testimonials (session) ── */
 let userTestimonials = [];
 
-/* ─────────────────────────────────────────
-   CATEGORIES
-───────────────────────────────────────── */
 const ALL_CATS = ['All', ...new Set(TESTIMONIALS.map(t => t.cat))];
 let currentCat = 'All';
 let sortMode   = 'default';
 
-/* ─────────────────────────────────────────
-   RENDER FILTERS
-───────────────────────────────────────── */
+
 function renderFilters() {
   const bar   = document.getElementById('filter-inner');
   const right = bar.querySelector('.filter-right');
@@ -675,9 +647,7 @@ function renderFilters() {
   });
 }
 
-/* ─────────────────────────────────────────
-   FILTER + SORT
-───────────────────────────────────────── */
+
 function getFiltered() {
   const all  = [...TESTIMONIALS, ...userTestimonials];
   let   list = currentCat === 'All' ? all : all.filter(t => t.cat === currentCat);
@@ -685,16 +655,12 @@ function getFiltered() {
   return list;
 }
 
-/* ─────────────────────────────────────────
-   INITIALS HELPER
-───────────────────────────────────────── */
+
 function initials(name) {
   return name.split(/\s+/).slice(0, 2).map(w => w[0]?.toUpperCase() || '').join('');
 }
 
-/* ─────────────────────────────────────────
-   RENDER GRID
-───────────────────────────────────────── */
+
 function renderGrid() {
   const grid  = document.getElementById('t-grid');
   const title = document.getElementById('results-title');
@@ -746,12 +712,11 @@ function renderGrid() {
           </div>`;
       }).join('');
 
-      /* Attach read-more listeners */
       grid.querySelectorAll('.read-more-btn').forEach(btn => {
         btn.addEventListener('click', () => toggleText(+btn.dataset.idx));
       });
 
-      /* Check for clamped text */
+
       setTimeout(() => {
         list.forEach((_, i) => {
           const el  = document.getElementById('tt-' + i);
@@ -774,17 +739,13 @@ function toggleText(i) {
   btn.textContent = expanded ? 'Read less ↑' : 'Read more ↓';
 }
 
-/* ─────────────────────────────────────────
-   SORT
-───────────────────────────────────────── */
+
 document.getElementById('sort-sel').addEventListener('change', e => {
   sortMode = e.target.value;
   renderGrid();
 });
 
-/* ─────────────────────────────────────────
-   MODAL OPEN / CLOSE
-───────────────────────────────────────── */
+
 function openModal() {
   document.getElementById('modal-overlay').classList.add('open');
   document.body.style.overflow = 'hidden';
@@ -806,9 +767,7 @@ document.getElementById('modal-overlay').addEventListener('click', e => {
 });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
-/* ─────────────────────────────────────────
-   STARS SELECTOR
-───────────────────────────────────────── */
+
 let selectedStars = 5;
 const starBtns = document.querySelectorAll('#star-sel button');
 
@@ -821,9 +780,8 @@ starBtns.forEach(btn => {
 /* Init all 5 lit */
 starBtns.forEach(b => b.classList.add('lit'));
 
-/* ─────────────────────────────────────────
-   FORM SUBMIT
-───────────────────────────────────────── */
+
+
 document.getElementById('testimonial-form').addEventListener('submit', async function(e) {
   e.preventDefault();
   let ok = true;
@@ -869,7 +827,7 @@ document.getElementById('testimonial-form').addEventListener('submit', async fun
   renderGrid();
 });
 
-/* Clear error states on input */
+
 ['t-name', 't-course', 't-faculty', 't-msg'].forEach(id => {
   const el = document.getElementById(id);
   if (!el) return;
@@ -880,9 +838,7 @@ document.getElementById('testimonial-form').addEventListener('submit', async fun
   });
 });
 
-/* ─────────────────────────────────────────
-   INIT
-───────────────────────────────────────── */
+
 renderFilters();
 renderGrid();
 

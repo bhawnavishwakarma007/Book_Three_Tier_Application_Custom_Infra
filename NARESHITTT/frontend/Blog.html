@@ -14,8 +14,6 @@
     a{color:inherit;text-decoration:none;}
     img{display:block;max-width:100%;}
     ::-webkit-scrollbar{width:4px;}::-webkit-scrollbar-track{background:var(--cream-dark);}::-webkit-scrollbar-thumb{background:var(--gold);border-radius:4px;}
-
-    /* ── NAV ── */
     .nav{position:sticky;top:0;z-index:400;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 60px;background:rgba(246,243,237,.96);backdrop-filter:blur(24px);box-shadow:0 1px 0 var(--divider);}
     .nav-logo img{height:38px;}
     .nav-links{display:flex;gap:36px;list-style:none;align-items:center;}
@@ -24,8 +22,6 @@
     .nav-links>li>a:hover,.nav-links>li>a.active{color:var(--ink);}
     .nav-links>li>a:hover::after,.nav-links>li>a.active::after{transform:scaleX(1);}
     .nav-end{display:flex;gap:10px;align-items:center;}
-
-    /* ── NAV USER PROFILE ── */
     .nav-user{display:none;align-items:center;gap:10px;}
     .nav-user.show{display:flex;}
     .nav-user-avatar{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--ink));color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-serif);font-size:13px;font-weight:700;flex-shrink:0;}
@@ -42,7 +38,6 @@
     .btn-nf{padding:9px 22px;background:var(--gold);border:1.5px solid var(--gold);border-radius:var(--r-pill);font-family:var(--font-sans);font-size:12px;font-weight:600;color:var(--white);cursor:pointer;transition:all .35s var(--ease-silk);}
     .btn-nf:hover{background:var(--ink);border-color:var(--ink);}
 
-    /* ── HERO ── */
     .page-hero{background:var(--ink);padding:72px 60px 64px;position:relative;overflow:hidden;}
     .page-hero::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 60% 100% at 90% 50%,rgba(184,144,80,.09),transparent 65%);}
     .hero-inner{position:relative;z-index:1;max-width:1280px;margin:0 auto;}
@@ -57,16 +52,12 @@
     .hero-search input::placeholder{color:rgba(246,243,237,.3);}
     .hero-search button{padding:0 24px;background:var(--gold);border:none;font-family:var(--font-sans);font-size:12px;font-weight:600;color:var(--white);cursor:pointer;transition:background .3s;}
     .hero-search button:hover{background:var(--gold-light);}
-
-    /* ── CAT STRIP ── */
     .cat-strip{background:var(--white);border-bottom:1px solid var(--divider);position:sticky;top:68px;z-index:300;overflow-x:auto;}
     .cat-strip::-webkit-scrollbar{display:none;}
     .cat-inner{max-width:1280px;margin:0 auto;padding:0 60px;display:flex;align-items:center;white-space:nowrap;}
     .cat-btn{padding:16px 20px;background:transparent;border:none;border-bottom:2px solid transparent;font-family:var(--font-sans);font-size:12px;font-weight:500;letter-spacing:.5px;text-transform:uppercase;color:var(--ash);cursor:pointer;transition:color .25s;white-space:nowrap;flex-shrink:0;}
     .cat-btn:hover{color:var(--ink);}
     .cat-btn.active{color:var(--ink);border-bottom-color:var(--gold);font-weight:600;}
-
-    /* ── MAIN ── */
     .main{max-width:1280px;margin:0 auto;padding:52px 60px 100px;}
     .featured-row{display:grid;grid-template-columns:1fr 340px;gap:24px;margin-bottom:60px;padding-bottom:60px;border-bottom:1px solid var(--divider);}
     .featured-card{background:var(--white);border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--divider);cursor:pointer;transition:transform .4s var(--ease-silk),box-shadow .4s,border-color .3s;}
@@ -123,8 +114,6 @@
     .empty-ico{font-size:52px;opacity:.3;margin-bottom:14px;}
     .empty h3{font-family:var(--font-serif);font-size:24px;font-weight:400;color:var(--ash);margin-bottom:8px;}
     .empty p{font-size:13px;color:var(--ash);opacity:.7;}
-
-    /* ── ARTICLE MODAL ── */
     .art-overlay{position:fixed;inset:0;z-index:900;background:rgba(17,16,16,.65);backdrop-filter:blur(10px);display:flex;align-items:flex-start;justify-content:center;padding:24px;overflow-y:auto;opacity:0;pointer-events:none;transition:opacity .35s;}
     .art-overlay.open{opacity:1;pointer-events:auto;}
     .art-modal{background:var(--white);border-radius:20px;width:100%;max-width:760px;margin:auto;position:relative;transform:translateY(30px) scale(.97);transition:transform .4s var(--ease-silk);box-shadow:0 48px 120px rgba(17,16,16,.3);}
@@ -153,8 +142,6 @@
     .art-cta p{font-size:13px;color:rgba(246,243,237,.4);}
     .art-cta-btn{padding:11px 24px;background:var(--gold);color:var(--white);border:none;border-radius:var(--r-pill);font-family:var(--font-sans);font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;transition:background .3s;}
     .art-cta-btn:hover{background:var(--gold-light);}
-
-    /* ── FOOTER ── */
     .site-footer{background:var(--ink);padding:60px 60px 36px;}
     .fgrid{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:52px;max-width:1280px;margin:0 auto 48px;}
     .flogo img{height:34px;filter:brightness(0) invert(1);opacity:.8;margin-bottom:16px;}
@@ -179,8 +166,6 @@
   </style>
 </head>
 <body>
-
-<!-- NAV -->
 <nav class="nav">
   <a href="index.html" class="nav-logo"><img src="https://cdn.nareshit.com/images/naresh-it-logo2.png" alt="NareshIT"></a>
   <ul class="nav-links">
@@ -199,13 +184,10 @@
       </div>
       <button class="nav-signout" id="nav-signout">Sign out</button>
     </div>
-    <!-- Logged-out buttons -->
     <button class="btn-ng" id="nav-login-btn" type="button">Login</button>
     <button class="btn-nf" id="enroll-btn" type="button">Enroll Now</button>
   </div>
 </nav>
-
-<!-- HERO -->
 <div class="page-hero">
   <div class="hero-inner">
     <div class="hero-eye">Knowledge &amp; Insights</div>
@@ -218,10 +200,7 @@
   </div>
 </div>
 
-<!-- CATEGORY STRIP -->
 <div class="cat-strip"><div class="cat-inner" id="cat-inner"></div></div>
-
-<!-- MAIN -->
 <div class="main">
   <div class="featured-row" id="featured-row">
     <div class="featured-card" id="featured-card">
@@ -249,7 +228,6 @@
   <div id="blog-grid"></div>
 </div>
 
-<!-- ARTICLE MODAL -->
 <div class="art-overlay" id="art-overlay">
   <div class="art-modal" id="art-modal">
     <div class="art-hero">
@@ -273,8 +251,6 @@
     </div>
   </div>
 </div>
-
-<!-- FOOTER -->
 <footer class="site-footer">
   <div class="fgrid">
     <div>
@@ -298,13 +274,7 @@
   <button class="fbtn fbtn-wa" id="wa-btn" type="button">&#128172;</button>
   <button class="fbtn fbtn-ph" id="ph-btn" type="button">&#128222;</button>
 </div>
-
-<!-- ─────────────────────────────────────────────────────────────
-     SCRIPTS  —  type="module" required for ES import statements
-───────────────────────────────────────────────────────────── -->
 <script type="module">
-
-  /* ── Firebase ── */
   import { initializeApp }
     from 'https://www.gstatic.com/firebasejs/12.11.0/firebase-app.js';
   import { getAuth, onAuthStateChanged, signOut }
@@ -349,8 +319,6 @@
     loginBtn.classList.remove('hidden');
     try { localStorage.removeItem(LS_KEY); } catch(_) {}
   }
-
-  /* Instant render from localStorage — no flicker on page load */
   (function() {
     try {
       const cached = localStorage.getItem(LS_KEY);
@@ -375,17 +343,11 @@
       hideNavProfile();
     }
   });
-
-  /* ── Nav / float button wiring ── */
   document.getElementById('nav-login-btn').addEventListener('click',  () => { window.location.href = 'index.html'; });
   document.getElementById('enroll-btn').addEventListener('click',     () => { window.location.href = 'index.html#contact'; });
   document.getElementById('art-cta-btn').addEventListener('click',    () => { window.location.href = 'courses.html'; });
   document.getElementById('wa-btn').addEventListener('click',         () => { window.open('https://wa.me/+918179191999', '_blank'); });
   document.getElementById('ph-btn').addEventListener('click',         () => { window.location.href = 'tel:+918179191999'; });
-
-  /* ═══════════════════════════════════════════════════════════
-     ARTICLE CONTENT
-  ═══════════════════════════════════════════════════════════ */
   const ARTICLE_CONTENT = {
     "Generative AI & Agentic AI with Python: The Complete Career Guide": {
       intro: "Generative AI and Agentic AI are no longer futuristic buzzwords — they are actively reshaping every industry from healthcare to finance, and Python is the language powering it all. In 2025, companies are not just experimenting with AI; they are hiring engineers who can build, fine-tune, and deploy intelligent agents at scale. If you are looking for a career path that offers long-term relevance and exceptional compensation, this is it.",
@@ -435,14 +397,8 @@
       conclusion: "DevOps is one of the most rewarding career paths in tech precisely because it sits at the intersection of development, operations, and business outcomes. NareshIT's DevOps training program takes you from the fundamentals to real-world automation projects, with instructors who have built production systems at scale.",
       tags: ["DevOps", "Beginners", "CI/CD", "Automation", "Career", "Cloud"]
     }
-    /* Additional article content omitted for brevity — the full ARTICLE_CONTENT
-       object from the original file is preserved exactly as-is. All 45 articles
-       are present in the deployed file. */
+   
   };
-
-  /* ══════════════════════════════════════════════════
-     BLOG DATA
-  ══════════════════════════════════════════════════ */
   const BLOGS=[
     {cat:'AI & ML',icon:'🤖',tag:'Generative AI',readtime:'8 min read',date:'Mar 2026',img:'https://images.nareshit.com/Generative_AI_&_Agentic_AI_with_Python.png',title:'Generative AI & Agentic AI with Python: The Complete Career Guide',excerpt:'Discover how Generative AI and Agentic AI are transforming industries — and how to build a career in this explosive field using Python.',featured:true},
     {cat:'AI & ML',icon:'✨',tag:'Advanced AI',readtime:'7 min read',date:'Mar 2026',img:'https://images.nareshit.com/Advanced_Generative_and_Agentic_AI_Online_Training_NARESHIT.jpg',title:'Advanced Generative & Agentic AI: What Separates Beginners from Experts',excerpt:'Go beyond ChatGPT prompting — learn the deep architecture skills that make AI engineers indispensable in 2025.'},
@@ -491,9 +447,6 @@
     {cat:'Mobile',icon:'📱',tag:'iOS',readtime:'6 min read',date:'Feb 2026',img:'https://images.nareshit.com/ios-online-training-nareshit.jpg',title:'iOS Development with Swift: Building Apps for the Apple Ecosystem',excerpt:'Swift is fast, modern, and powerful. Here is what it takes to become an iOS developer and what the career path looks like.'},
   ];
 
-  /* ══════════════════════════════════════════════════
-     RENDER
-  ══════════════════════════════════════════════════ */
   const ALL_CATS = ['All', ...new Set(BLOGS.map(b => b.cat))];
   let currentCat = 'All', searchQuery = '';
 
@@ -593,8 +546,6 @@
   }
 
   function renderAll() { const list = getFiltered(); renderFeatured(list); renderGrid(list); }
-
-  /* ── Article modal ── */
   function buildArticleHTML(art) {
     let html = '';
     if (art.intro) html += '<p>' + art.intro + '</p>';
@@ -636,8 +587,6 @@
     if (e.target === document.getElementById('art-overlay')) closeArticle();
   });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeArticle(); });
-
-  /* ── Search ── */
   function doSearch() {
     searchQuery = document.getElementById('search-inp').value.trim();
     if (searchQuery) currentCat = 'All';
@@ -647,8 +596,6 @@
   document.getElementById('search-btn').addEventListener('click', doSearch);
   document.getElementById('search-inp').addEventListener('keydown', e => { if (e.key === 'Enter') doSearch(); });
   document.getElementById('search-inp').addEventListener('input', e => { searchQuery = e.target.value.trim(); renderAll(); });
-
-  /* ── Init ── */
   renderCats();
   renderAll();
   const cp = new URLSearchParams(location.search).get('cat');
