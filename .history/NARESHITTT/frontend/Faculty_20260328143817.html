@@ -1725,7 +1725,7 @@
         document.getElementById('ai-content').classList.remove('show');
         document.getElementById('ai-error-box').classList.remove('show');
 
-        const res = await fetch("http://13.232.107.133:5000/trainer", {
+        const res = await fetch("http://localhost:5000/trainer", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
