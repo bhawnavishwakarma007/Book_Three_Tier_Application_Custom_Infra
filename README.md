@@ -60,39 +60,39 @@ Create the S3 bucket before running `terraform init`.
    ```text
    how-to-train-ur-dragon
 
-Select the AWS Region:
+5. Select the AWS Region:
 
 us-east-1
-Keep Block all public access enabled.
-Click Create bucket.
-Enable Versioning
-Open the newly created S3 bucket: how-to-train-ur-dragon.
-Go to the Properties tab.
-Scroll to Bucket Versioning.
-Click Edit.
-Select Enable.
-Click Save changes.
+6. Keep Block all public access enabled.
+7. Click Create bucket.
+8. Enable Versioning
+9. Open the newly created S3 bucket: how-to-train-ur-dragon.
+10. Go to the Properties tab.
+11. Scroll to Bucket Versioning.
+12. Click Edit.
+13. Select Enable.
+14. Click Save changes.
 
-### Step 1: Initialize Terraform
+### Step 2: Initialize Terraform
 
 ``` bash
 terraform init
 ```
 
-### Step 2: Apply Networking
+### Step 3: Apply Networking
 
 ``` bash
 terraform plan  -target=module.networking
 terraform apply -target=module.networking
 ```
 
-### Step 3: Deploy Bastion Host
+### Step 4: Deploy Bastion Host
 
 ``` bash
 terraform apply -target=module.bastion
 ```
 
-### Step 4: Deploy EC2 Instances
+### Step 5: Deploy EC2 Instances
 
 ``` bash
 terraform plan -target=module.frontend_ec2
@@ -101,7 +101,7 @@ terraform plan -target=module.backend_ec2
 terraform apply -target=module.backend_ec2
 ```
 
-### Step 5: Deploy Load Balancers
+### Step 6: Deploy Load Balancers
 
 ``` bash
 terraform plan -target=module.backend_alb
@@ -110,14 +110,14 @@ terraform plan -target=module.frontend_alb
 terraform apply -target=module.frontend_alb
 ```
 
-### Step 6: Deploy Database
+### Step 7: Deploy Database
 
 ``` bash
 terraform plan -target=module.database
 terraform apply -target=module.database
 ```
 
-### Step 7: Apply Remaining Modules
+### Step 8: Apply Remaining Modules
 
 ``` bash
 terraform plan -target=module.frontend_launch_template
