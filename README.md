@@ -63,14 +63,15 @@ Create the S3 bucket before running `terraform init`.
 5. Select the AWS Region:
 
 us-east-1
-6. Keep Block all public access enabled.
-7. Click Create bucket.
-8. Enable Versioning
+
+6. Keep **Block all public access** enabled.
+7. Click **Create bucket**.
+8. Enable **Versioning**
 9. Open the newly created S3 bucket: how-to-train-ur-dragon.
-10. Go to the Properties tab.
-11. Scroll to Bucket Versioning.
-12. Click Edit.
-13. Select Enable.
+10. Go to the **Properties** tab.
+11. Scroll to **Bucket Versioning**.
+12. Click **Edit**.
+13. Select **Enable**.
 14. Click Save changes.
 
 ### Step 2: Initialize Terraform
