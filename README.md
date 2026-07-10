@@ -48,6 +48,31 @@ This project provisions and deploys a **three-tier application
 
 ## Deployment Flow
 
+### Step 1: Create S3 Bucket for Terraform State
+
+Create the S3 bucket before running `terraform init`.
+
+1. Sign in to the AWS Management Console.
+2. Open **Amazon S3**.
+3. Click **Create bucket**.
+4. Enter the bucket name:
+
+   ```text
+   how-to-train-ur-dragon
+
+Select the AWS Region:
+
+us-east-1
+Keep Block all public access enabled.
+Click Create bucket.
+Enable Versioning
+Open the newly created S3 bucket: how-to-train-ur-dragon.
+Go to the Properties tab.
+Scroll to Bucket Versioning.
+Click Edit.
+Select Enable.
+Click Save changes.
+
 ### Step 1: Initialize Terraform
 
 ``` bash
