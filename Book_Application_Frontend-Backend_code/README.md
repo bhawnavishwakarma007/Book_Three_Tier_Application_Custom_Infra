@@ -7,6 +7,10 @@ approach.
 The project is intended for hands-on DevOps learning and real-world cloud
 architecture understanding.
 
+## Architecture Diagram
+
+![Three Tier AWS Architecture](./architecture.gif)
+
 ---
 
 ## Application Architecture
