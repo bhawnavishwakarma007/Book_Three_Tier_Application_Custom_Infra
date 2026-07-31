@@ -35,6 +35,17 @@ Amazon RDS (MySQL in Private Subnets)
 
 ---
 
+## Project Highlights
+
+- Terraform Modules: 8
+- AWS Services Used: 10+
+- Load Balancers: 2
+- Auto Scaling Groups: 2
+- Launch Templates: 2
+- EC2 Instances: Frontend + Backend
+- Database: Amazon RDS (MySQL)
+- Architecture: Three-Tier
+
 ## Tech Stack
 
 ### Frontend
